@@ -11,8 +11,6 @@ class ApplicationController < ActionController::Base
     redirect_back fallback_location: root_path, allow_other_host: false
   end
 
-  before_action :authenticate_account!
-
   private
 
   # A shorthand for passing locals to views, avoiding implicitly passed instance
