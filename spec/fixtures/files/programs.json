@@ -1,0 +1,266 @@
+{
+    "programs": [
+        {
+            "currency": "BTC",
+            "level": 3,
+            "periodDuration": 14,
+            "periodStarts": "2018-12-19T21:29:22.8088120+00:00",
+            "periodEnds": "2019-01-02T21:29:22.8088120+00:00",
+            "availableInvestment": 1461.07003906,
+            "statistic": {
+                "balanceBase": {
+                    "amount": 0.97709734,
+                    "currency": "BTC"
+                },
+                "balanceGVT": {
+                    "amount": 896.4184126362,
+                    "currency": "GVT"
+                },
+                "balanceSecondary": {
+                    "amount": 0.97709734,
+                    "currency": "BTC"
+                },
+                "currentValue": 0,
+                "profitPercent": 0,
+                "profitValue": 0,
+                "drawdownPercent": 0,
+                "investorsCount": 54,
+                "tradesCount": 1063
+            },
+            "rating": {
+                "rating": 3,
+                "profit": 25.9466,
+                "canLevelUp": false,
+                "topPercent": 15
+            },
+            "personalDetails": null,
+            "tags": [],
+            "id": "03ca6f17-d013-409b-82b6-50cf27ff26ee",
+            "logo": "b5fa6856-03fd-403e-b6e6-43de99f24c17",
+            "url": "14daysswings",
+            "color": "#0D6DA1",
+            "title": "14daysSwings",
+            "description": "Swing Trades using Elliot Wave Theory\nLNola\n",
+            "status": "Active",
+            "manager": {
+                "id": "0cc55431-3928-4005-aece-d540a415c15c",
+                "username": "Trades4Success",
+                "avatar": "8c9b4cea-07a2-4a54-b1bc-bf4fa2bf676d",
+                "registrationDate": "2018-11-02T23:22:56.5999880+00:00",
+                "url": "perovskites"
+            },
+            "chart": [],
+            "dashboardAssetsDetails": null
+        },
+        {
+            "currency": "BTC",
+            "level": 2,
+            "periodDuration": 14,
+            "periodStarts": "2018-12-20T07:28:40.6472840+00:00",
+            "periodEnds": "2019-01-03T07:28:40.6472840+00:00",
+            "availableInvestment": 1,
+            "statistic": {
+                "balanceBase": {
+                    "amount": 0.63168912,
+                    "currency": "BTC"
+                },
+                "balanceGVT": {
+                    "amount": 579.5305493616,
+                    "currency": "GVT"
+                },
+                "balanceSecondary": {
+                    "amount": 0.63168912,
+                    "currency": "BTC"
+                },
+                "currentValue": 0,
+                "profitPercent": 0,
+                "profitValue": 0,
+                "drawdownPercent": 0,
+                "investorsCount": 35,
+                "tradesCount": 71
+            },
+            "rating": {
+                "rating": 8,
+                "profit": 1.6966,
+                "canLevelUp": true,
+                "topPercent": 10
+            },
+            "personalDetails": null,
+            "tags": [],
+            "id": "ca919dba-84ed-47d2-8f71-818c1a56d83c",
+            "logo": "39a5d06a-4ecf-4e42-a189-284f7786eeb8",
+            "url": "acar-14d",
+            "color": "#37D13A",
+            "title": "Acar 14D",
+            "description": "GVT trading with %50 of the fund and day trading with the rest. Acar Trading\nhttps://t.me/acartrading",
+            "status": "Active",
+            "manager": {
+                "id": "a2b564e6-45d9-43ef-b7c4-a7d4c576ecb1",
+                "username": "Acar Trading",
+                "avatar": null,
+                "registrationDate": "2018-10-30T22:58:37.0126640+00:00",
+                "url": "xendane"
+            },
+            "chart": [],
+            "dashboardAssetsDetails": null
+        },
+        {
+            "currency": "BTC",
+            "level": 3,
+            "periodDuration": 30,
+            "periodStarts": "2018-12-31T19:16:25.2706400+00:00",
+            "periodEnds": "2019-01-30T19:16:25.2706400+00:00",
+            "availableInvestment": 2559.5843,
+            "statistic": {
+                "balanceBase": {
+                    "amount": 0.88150004,
+                    "currency": "BTC"
+                },
+                "balanceGVT": {
+                    "amount": 808.7145816972,
+                    "currency": "GVT"
+                },
+                "balanceSecondary": {
+                    "amount": 0.88150004,
+                    "currency": "BTC"
+                },
+                "currentValue": 0,
+                "profitPercent": 0,
+                "profitValue": 0,
+                "drawdownPercent": 0,
+                "investorsCount": 48,
+                "tradesCount": 118
+            },
+            "rating": {
+                "rating": 2,
+                "profit": 27.4037,
+                "canLevelUp": true,
+                "topPercent": 10
+            },
+            "personalDetails": null,
+            "tags": [],
+            "id": "c5e3a483-91e9-408f-8c77-ac6134d12ea4",
+            "logo": null,
+            "url": "accor-invest",
+            "color": "#35E966",
+            "title": "Accor Invest",
+            "description": "\nOur team analyzes cryptocurrency and Forex markets every day in search of the most promising investments with limited risk.",
+            "status": "Active",
+            "manager": {
+                "id": "9aaf6f7e-8ee5-49f6-a226-91e3fc9d4528",
+                "username": "matadrox",
+                "avatar": null,
+                "registrationDate": "2018-10-30T20:59:11.9237180+00:00",
+                "url": "matadrox"
+            },
+            "chart": [],
+            "dashboardAssetsDetails": null
+        },
+        {
+            "currency": "BTC",
+            "level": 2,
+            "periodDuration": 7,
+            "periodStarts": "2018-12-28T09:57:47.8017530+00:00",
+            "periodEnds": "2019-01-04T09:57:47.8017530+00:00",
+            "availableInvestment": 482.51,
+            "statistic": {
+                "balanceBase": {
+                    "amount": 0.32777436,
+                    "currency": "BTC"
+                },
+                "balanceGVT": {
+                    "amount": 300.7100310948,
+                    "currency": "GVT"
+                },
+                "balanceSecondary": {
+                    "amount": 0.32777436,
+                    "currency": "BTC"
+                },
+                "currentValue": 0,
+                "profitPercent": 0,
+                "profitValue": 0,
+                "drawdownPercent": 0,
+                "investorsCount": 24,
+                "tradesCount": 35
+            },
+            "rating": {
+                "rating": 18,
+                "profit": 0,
+                "canLevelUp": false,
+                "topPercent": 22
+            },
+            "personalDetails": null,
+            "tags": [],
+            "id": "5e2e9cbd-dfcd-4801-9f5e-a63edae17e71",
+            "logo": "4a96efd6-62a3-468f-9f95-3868a29ab3e9",
+            "url": "april",
+            "color": "#76D1F6",
+            "title": "April",
+            "description": "This is my account: \nhttps://alpari.com/ru/investor/pamm/424292/ \n\nTrading operations will not be similar, but the trading system will be the same.",
+            "status": "Active",
+            "manager": {
+                "id": "7158779d-7d5f-4539-a9c8-f56af527b348",
+                "username": "BUGATTI",
+                "avatar": "c7d00020-f13a-4bb1-90be-62fa62475430",
+                "registrationDate": "2018-11-02T08:33:26.7738740+00:00",
+                "url": "bugatti"
+            },
+            "chart": [],
+            "dashboardAssetsDetails": null
+        },
+        {
+            "currency": "BTC",
+            "level": 2,
+            "periodDuration": 30,
+            "periodStarts": "2018-12-03T08:34:29.9266960+00:00",
+            "periodEnds": "2019-01-02T08:34:29.9266960+00:00",
+            "availableInvestment": 0,
+            "statistic": {
+                "balanceBase": {
+                    "amount": 0.98528877,
+                    "currency": "BTC"
+                },
+                "balanceGVT": {
+                    "amount": 903.9334762611,
+                    "currency": "GVT"
+                },
+                "balanceSecondary": {
+                    "amount": 0.98528877,
+                    "currency": "BTC"
+                },
+                "currentValue": 0,
+                "profitPercent": 0,
+                "profitValue": 0,
+                "drawdownPercent": 0,
+                "investorsCount": 39,
+                "tradesCount": 167
+            },
+            "rating": {
+                "rating": 78,
+                "profit": -2.0717,
+                "canLevelUp": false,
+                "topPercent": 95
+            },
+            "personalDetails": null,
+            "tags": [],
+            "id": "95c58b2d-eee0-4e03-8887-b63e2d462ca8",
+            "logo": "8ff45336-82eb-4769-a14f-a9d1573c017f",
+            "url": "heritage-invest",
+            "color": "#D0FD90",
+            "title": "ARK Invest 30D vol 1",
+            "description": "\n\nOur target is to provide our Investors with the greatest  profits with the lowest possible investment risk. Every day, our team analyzes many stock exchanges, forex etc. to search for opportunities for profitable investments",
+            "status": "Active",
+            "manager": {
+                "id": "ed5537e1-e2f8-495f-85e1-307e055b2eaa",
+                "username": "ARKInvest",
+                "avatar": null,
+                "registrationDate": "2018-10-31T16:10:52.9510020+00:00",
+                "url": "arekcwiek"
+            },
+            "chart": [],
+            "dashboardAssetsDetails": null
+        }
+    ],
+    "total": 110
+}
+

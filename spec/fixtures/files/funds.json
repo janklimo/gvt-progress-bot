@@ -1,0 +1,111 @@
+{
+    "funds": [
+        {
+            "totalAssetsCount": 15,
+            "topFundAssets": [
+                {
+                    "asset": "BTC",
+                    "name": "Bitcoin",
+                    "percent": 26,
+                    "icon": "be9d1f2a-0cff-4116-8dbf-ebcd687fa822"
+                },
+                {
+                    "asset": "ETH",
+                    "name": "Ethereum",
+                    "percent": 25,
+                    "icon": "dc78d4fb-c7a7-4afa-a613-72e813ba1d73"
+                },
+                {
+                    "asset": "USDT",
+                    "name": "Tether",
+                    "percent": 7,
+                    "icon": "45f061f2-b066-4d47-a40a-fb1320e8dbc5"
+                }
+            ],
+            "statistic": {
+                "balanceGVT": {
+                    "amount": 64.0282642,
+                    "currency": "GVT"
+                },
+                "balanceSecondary": {
+                    "amount": 64.0282642,
+                    "currency": "GVT"
+                },
+                "profitPercent": 0,
+                "drawdownPercent": 0,
+                "investorsCount": 0
+            },
+            "personalDetails": null,
+            "id": "cc02448b-e541-45ff-9ac6-77df126b5bd3",
+            "logo": null,
+            "url": "7777777",
+            "color": "#818A9C",
+            "title": "7777777",
+            "description": "The legendary fund of se7ens.",
+            "status": "None",
+            "manager": {
+                "id": "28b03f57-9b56-4713-87f0-a80a7f459dd2",
+                "username": "DYOR",
+                "avatar": null,
+                "registrationDate": "2018-11-05T18:05:09.2088950+00:00",
+                "url": "dyor"
+            },
+            "chart": [],
+            "dashboardAssetsDetails": null
+        },
+        {
+            "totalAssetsCount": 5,
+            "topFundAssets": [
+                {
+                    "asset": "NEO",
+                    "name": "NEO",
+                    "percent": 20,
+                    "icon": "cd0cae83-bc00-4aa6-93d8-bcdb99c1d116"
+                },
+                {
+                    "asset": "LINK",
+                    "name": "Chainlink",
+                    "percent": 20,
+                    "icon": "b2dcb7e5-4119-4098-963d-bd5ff329b536"
+                },
+                {
+                    "asset": "HOT",
+                    "name": "Holo",
+                    "percent": 20,
+                    "icon": "3766012b-0259-4772-b805-7715e272f067"
+                }
+            ],
+            "statistic": {
+                "balanceGVT": {
+                    "amount": 71.47436132,
+                    "currency": "GVT"
+                },
+                "balanceSecondary": {
+                    "amount": 71.47436132,
+                    "currency": "GVT"
+                },
+                "profitPercent": 0,
+                "drawdownPercent": 0,
+                "investorsCount": 1
+            },
+            "personalDetails": null,
+            "id": "44886d7c-f179-47c3-a376-0168ac3f845c",
+            "logo": "caf772c9-2588-4de3-a0dd-197aa6a303eb",
+            "url": "ferrari-fund",
+            "color": "#4A3EF3",
+            "title": "Bizreali Fund ",
+            "description": "The Mother of all funds.",
+            "status": "None",
+            "manager": {
+                "id": "e63d94eb-b399-4982-8f8b-98ab94dc1de2",
+                "username": "Quantum Capital ",
+                "avatar": "e9f95f9e-beb2-47a4-99a3-593b2328a99d",
+                "registrationDate": "2018-11-16T15:30:37.7403930+00:00",
+                "url": "obsidian"
+            },
+            "chart": [],
+            "dashboardAssetsDetails": null
+        }
+    ],
+    "total": 54
+}
