@@ -51,9 +51,6 @@ gem 'fast_jsonapi'
 # App configuration
 gem 'figaro'
 
-# Exception tracking
-gem 'airbrake'
-
 # Job queue
 gem 'sidekiq'
 
