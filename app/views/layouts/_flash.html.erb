@@ -1,0 +1,14 @@
+<% if flash.present? %>
+  <div class="row-fluid alerts">
+    <% flash.each do |name, message| %>
+      <div class="alert alert-dismissible <%= flash_alert_class(name) %> fade show" role="alert">
+        <div class="container">
+          <button class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <%= message %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

@@ -1,0 +1,123 @@
+version: 2
+jobs:
+  test:
+    parallelism: 1
+    working_directory: ~/src
+    docker:
+      - image: circleci/ruby:2.5-node-browsers
+        environment:
+          BUNDLE_JOBS: 1
+          BUNDLE_RETRY: 1
+          BUNDLE_PATH: vendor/bundle
+          HOST: http://example.com
+          PGHOST: 127.0.0.1
+          PGUSER: lockstep
+          RAILS_ENV: test
+      - image: circleci/postgres:10-alpine-ram
+        environment:
+          POSTGRES_DB: rails_new_test
+          POSTGRES_USER: lockstep
+    steps:
+      - checkout
+
+      - restore_cache:
+          key: yarn-{{ checksum "yarn.lock" }}
+
+      - run:
+          name: Install yarn dependencies
+          command: yarn install
+
+      - save_cache:
+          key: yarn-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.yarn-cache
+
+      - restore_cache:
+          key: bundle-{{ checksum "Gemfile.lock" }}
+
+      - run:
+          name: Install bundle
+          command: bin/bundle install --path vendor/bundle
+
+      - save_cache:
+          key: bundle-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+
+      - run:
+          name: Verify bundle security
+          command: bundle exec bundle-audit check --update
+
+      - run:
+          name: Wait for DB
+          command: dockerize -wait tcp://localhost:5432 -timeout 1m
+
+      # Database setup
+      - run:
+          name: Set up database
+          command: |
+            bundle exec rake db:create && bundle exec rake db:schema:load
+
+      # Environment setup
+      - run:
+          name: Set up app environment
+          command: cp config/application.yml.example config/application.yml
+
+      # Run rspec in parallel
+      - run:
+          name: Run tests
+          type: shell
+          command: |
+            bundle exec rspec \
+              --no-fail-fast \
+              --profile 10 \
+              --format RspecJunitFormatter \
+              --out test_results/rspec.xml \
+              --format progress \
+              $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+
+      # Save test results for timing analysis
+      - store_test_results:
+          path: test_results
+
+  deploy-master:
+    machine:
+      enabled: true
+    working_directory: ~/src
+    steps:
+      - checkout
+      - run:
+          name: Deploy Master to Heroku
+          command: |
+            git push https://heroku:${HEROKU_API_KEY}@git.heroku.com/${HEROKU_APP_NAME}-production.git master
+            heroku run rake db:migrate --app ${HEROKU_APP_NAME}-production
+
+  # deploy-staging:
+  #   machine:
+  #     enabled: true
+  #   working_directory: ~/src
+  #   steps:
+  #     - checkout
+  #     - run:
+  #         name: Deploy Development to Heroku
+  #         command: |
+  #           git push https://heroku:${HEROKU_API_KEY}@git.heroku.com/${HEROKU_APP_NAME}-staging.git development:master
+  #           heroku run rake db:migrate --app ${HEROKU_APP_NAME}-staging
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - test
+      - deploy-master:
+          requires:
+            - test
+          filters:
+            branches:
+              only: master
+      # - deploy-staging:
+      #     requires:
+      #       - test
+      #     filters:
+      #       branches:
+      #         only: development

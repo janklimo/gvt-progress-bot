@@ -1,0 +1,17 @@
+DATABASE_URL: 'postgres://localhost:5432/gvt_bot_development'
+HOST: 'http://localhost:3000'
+RAILS_MAX_THREADS: '1'
+WEB_CONCURRENCY: '1'
+REDIS_URL: 'redis://localhost:6379'
+RAILS_SYSTEM_TESTING_SCREENSHOT: 'inline'
+
+# When using Docker use this instead:
+# DATABASE_URL: 'postgres://postgres@postgres:5432/rails_new_development'
+# RAILS_LOG_TO_STDOUT: 'true'
+# REDIS_URL: 'redis://redis:6379'
+
+test:
+  DATABASE_URL: 'postgres://localhost:5432/gvt_bot_test'
+  # When using Docker use this instead:
+  # DATABASE_URL: 'postgres://postgres@postgres:5432/rails_new_test'
+  # RAILS_LOG_TO_STDOUT: 'false'
