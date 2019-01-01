@@ -89,8 +89,8 @@ jobs:
       - run:
           name: Deploy Master to Heroku
           command: |
-            git push https://heroku:${HEROKU_API_KEY}@git.heroku.com/${HEROKU_APP_NAME}-production.git master
-            heroku run rake db:migrate --app ${HEROKU_APP_NAME}-production
+            git push https://heroku:${HEROKU_API_KEY}@git.heroku.com/${HEROKU_APP_NAME}.git master
+            heroku run rake db:migrate --app ${HEROKU_APP_NAME}
 
   # deploy-staging:
   #   machine:
