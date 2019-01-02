@@ -1,0 +1,71 @@
+{
+    "status": {
+        "timestamp": "2019-01-02T13:05:50.520Z",
+        "error_code": 0,
+        "error_message": null,
+        "elapsed": 6,
+        "credit_count": 1
+    },
+    "data": {
+        "BTC": {
+            "id": 1,
+            "name": "Bitcoin",
+            "symbol": "BTC",
+            "slug": "bitcoin",
+            "circulating_supply": 17458600,
+            "total_supply": 17458600,
+            "max_supply": 21000000,
+            "date_added": "2013-04-28T00:00:00.000Z",
+            "num_market_pairs": 6726,
+            "tags": [
+                "mineable"
+            ],
+            "platform": null,
+            "cmc_rank": 1,
+            "last_updated": "2019-01-02T13:04:22.000Z",
+            "quote": {
+                "USD": {
+                    "price": 3855.57239175,
+                    "volume_24h": 4667531090.97147,
+                    "percent_change_1h": 0.182169,
+                    "percent_change_24h": 2.38808,
+                    "percent_change_7d": 1.36347,
+                    "market_cap": 67312896158.60655,
+                    "last_updated": "2019-01-02T13:04:22.000Z"
+                }
+            }
+        },
+        "GVT": {
+            "id": 2181,
+            "name": "Genesis Vision",
+            "symbol": "GVT",
+            "slug": "genesis-vision",
+            "circulating_supply": 4426883.31189056,
+            "total_supply": 4436643.92853333,
+            "max_supply": null,
+            "date_added": "2017-11-15T00:00:00.000Z",
+            "num_market_pairs": 12,
+            "tags": [],
+            "platform": {
+                "id": 1027,
+                "name": "Ethereum",
+                "symbol": "ETH",
+                "slug": "ethereum",
+                "token_address": "0x103c3a209da59d3e7c4a89307e66521e081cfdf0"
+            },
+            "cmc_rank": 148,
+            "last_updated": "2019-01-02T13:04:15.000Z",
+            "quote": {
+                "USD": {
+                    "price": 4.30157869335,
+                    "volume_24h": 910575.329497175,
+                    "percent_change_1h": 0.0323358,
+                    "percent_change_24h": 4.53164,
+                    "percent_change_7d": 7.65142,
+                    "market_cap": 19042586.932375114,
+                    "last_updated": "2019-01-02T13:04:15.000Z"
+                }
+            }
+        }
+    }
+}

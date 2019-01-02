@@ -9,6 +9,9 @@ describe 'data:fetch' do
 
     stub_request(:get, 'https://genesis.vision/api/v1.0/funds')
       .to_return(status: 200, body: file_fixture('funds.json'))
+
+    stub_request(:get, 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=BTC,GVT')
+      .with( headers: { 'X-Cmc-Pro-Api-Key' => 'a6a48427-8efa-4896-84da-81c04db3fef2' }).to_return(status: 200, body: file_fixture('quotes.json'))
   end
 
   it 'loads data and creates records' do
@@ -19,6 +22,9 @@ describe 'data:fetch' do
     expect(Entry.last.investors_count).to eq 201
     expect(Entry.last.trades_count).to eq 1_454
     expect(Entry.last.vehicles_count).to eq 164
+
+    expect(Quote.last.btcusd).to eq 3855.57239175
+    expect(Quote.last.gvtusd).to eq 4.30157869335
   end
 end
 
