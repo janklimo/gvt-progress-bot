@@ -1,1 +1,53 @@
-<h1>Hello!</h1>
+<div class="container">
+  <div class="header">
+    <div class="logo-container">
+      <%= image_tag 'gvt_logo.png', alt: 'gvt-logo', class: 'gvt-logo' %>
+    </div>
+    <div class="headline-container">
+      <h1 class='headline'>Most Upvoted Products of
+        <%#= @entry.date.strftime(" %b %-d, %Y") %>
+      </h1>
+      <h2 class="tagline">
+        <span class="rank"><%#= @post.rank %></span>
+        <%#= @post.name %>
+        <span class="count"> (<%#= @post.votes %> votes)</span>
+      </h2>
+    </div>
+  </div>
+  <script type="text/javascript" charset="utf-8">
+    Highcharts.setOptions({
+      global: {
+        timezoneOffset: 420
+      }
+    });
+  </script>
+  <div class="chart">
+    <%= area_chart(@chart_data,
+      colors: ['#15bbaf'],
+      library: {
+        plotOptions: {
+          series: {
+            animation: false,
+            fillColor: {
+              linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
+              stops: [
+                [0, '#15bbaf'],
+                [1, '#e1f9f7'],
+              ]
+            }
+          }
+        },
+        chart: {
+          height: 350
+        }
+      }) %>
+  </div>
+  <div class="footer">
+    Charts by
+    <span class="orange">@tophuntsdaily</span>
+    <span class="separator">|</span>
+    Data by
+    <span class="orange">@producthunt</span>
+  </div>
+</div>
+

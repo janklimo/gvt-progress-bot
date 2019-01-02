@@ -1,0 +1,119 @@
+.container {
+  width: 1000px;
+}
+
+.header {
+  margin-bottom: 45px;
+
+  .logo-container {
+    display: inline-block;
+    width: 100px;
+
+    .gvt-logo {
+      width: 73px;
+      display: inline;
+    }
+  }
+
+  .users-container {
+    float: right;
+    margin-top: 5px;
+    width: 320px;
+
+    .hunter-container {
+      float: right;
+      margin-bottom: 5px;
+    }
+
+    .makers-container {
+      float: right;
+      clear: both;
+    }
+
+    .thumb {
+      width: 45px;
+      border-radius: 50%;
+    }
+
+    .image-container {
+      display: inline-block;
+      position: relative;
+      float: right;
+      margin-left: 5px;
+    }
+
+    .badge {
+      border: 1px solid white;
+      border-radius: 50%;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+      box-sizing: border-box;
+      color: white;
+      font-size: 10px;
+      font-weight: 400;
+      height: 15px;
+      left: -4px;
+      line-height: 13px;
+      position: absolute;
+      text-align: center;
+      top: -4px;
+      width: 15px;
+    }
+
+    .hunter {
+      background: black;
+    }
+
+    .maker {
+      background: $green;
+    }
+  }
+}
+
+.headline-container {
+  display: inline-block;
+
+  .headline {
+    font-size: 20px;
+    position: relative;
+    top: 7px;
+    color: $gray;
+  }
+
+  .tagline {
+    margin: 0;
+    font-size: 26px;
+    position: relative;
+    top: -5px;
+  }
+
+  .rank {
+    color: $orange;
+  }
+
+  .count {
+    font-size: 16px;
+    color: $gray;
+    margin-left: 5px;
+  }
+}
+
+.chart {
+  display: block;
+  height: 350px;
+}
+
+.footer {
+  font-size: 12px;
+  margin-left: 14px;
+  color: #aeaeae;
+
+  .separator {
+    color: #6d6d6d;
+    margin: 0 7px;
+  }
+}
+
+.orange {
+  color: #da552f;
+}
+

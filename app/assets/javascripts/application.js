@@ -15,4 +15,6 @@
 //= require jquery-ujs/src/rails
 //= require popper.js/dist/umd/popper
 //= require bootstrap/dist/js/bootstrap
+//= require highcharts
+//= require chartkick
 //= require_tree .

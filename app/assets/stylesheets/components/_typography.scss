@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'montserratregular';
+    src: asset-url('montserrat-regular-webfont.woff2') format('woff2'),
+         asset-url('montserrat-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'montserratlight';
+    src: asset-url('montserrat-light-webfont.woff2') format('woff2'),
+         asset-url('montserrat-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+  font-family: 'montserratlight';
+}
+
+a {
+  text-decoration: none;
+  color: $orange;
+}
+
