@@ -11,7 +11,9 @@ describe 'data:fetch' do
       .to_return(status: 200, body: file_fixture('funds.json'))
 
     stub_request(:get, 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=BTC,GVT')
-      .with( headers: { 'X-Cmc-Pro-Api-Key' => 'a6a48427-8efa-4896-84da-81c04db3fef2' }).to_return(status: 200, body: file_fixture('quotes.json'))
+      .with( headers: { 'X-Cmc-Pro-Api-Key' => '123' }).to_return(status: 200, body: file_fixture('quotes.json'))
+
+    allow(ENV).to receive(:fetch).with('CMC_API_KEY').and_return('123')
   end
 
   it 'loads data and creates records' do
