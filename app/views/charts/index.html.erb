@@ -4,13 +4,21 @@
       <%= image_tag 'gvt_logo.png', alt: 'gvt-logo', class: 'gvt-logo' %>
     </div>
     <div class="headline-container">
-      <h1 class='headline'>Most Upvoted Products of
-        <%#= @entry.date.strftime(" %b %-d, %Y") %>
+      <h1 class='headline'>GVT Adoption Progress:
+        <%= @entry.created_at.strftime(" %b %-d, %Y") %>
       </h1>
       <h2 class="tagline">
-        <span class="rank"><%#= @post.rank %></span>
-        <%#= @post.name %>
-        <span class="count"> (<%#= @post.votes %> votes)</span>
+        Total amount invested
+        <span class="count primary">
+          <%= number_with_delimiter(@entry.gvt_invested) %> GVT
+        </span>
+        <p class="quotes">
+          <%= image_tag 'btc.png', alt: 'btc-logo', class: 'quote-image' %>
+          <%= number_with_delimiter(@btc_amount) %> BTC
+          <span class="separator">|</span>
+          <%= image_tag 'usd.png', alt: 'usd-logo', class: 'quote-image' %>
+          <%= number_with_delimiter(@usd_amount) %> USD
+        </p>
       </h2>
     </div>
   </div>
@@ -38,16 +46,22 @@
           }
         },
         chart: {
-          height: 350
+          height: 340
         }
       }) %>
   </div>
   <div class="footer">
-    Charts by
-    <span class="orange">@tophuntsdaily</span>
-    <span class="separator">|</span>
-    Data by
-    <span class="orange">@producthunt</span>
+    <span>Total GVT amount invested across all programs and funds.</span>
+    <span class="credits">
+      Charts by
+      <span class="primary">@gvt_progress_bot</span>
+      <span class="separator">|</span>
+      Data by
+      <span class="primary">@genesis_vision</span>
+      <span class="separator">|</span>
+      Made by
+      <span class="primary">@janklimo</span>
+    </span>
   </div>
 </div>
 
