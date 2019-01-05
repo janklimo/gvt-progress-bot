@@ -16,7 +16,7 @@ namespace :tweet do
     url = "https://gvt-progress-bot.herokuapp.com"
 
     image_kit = IMGKit.new(url, zoom: 2, width: 2048, height: 1024)
-    chart = image_kit.to_file("chart.jpg")
+    chart = image_kit.to_file("chart_new.jpg")
 
     client.update_with_media('Hello World!', chart)
   end
