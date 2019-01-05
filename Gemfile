@@ -67,7 +67,7 @@ gem 'chartkick'
 gem 'httparty'
 
 # needed for imgkit
-gem 'wkhtmltoimage-binary'
+gem 'wkhtmltoimage-binary', '0.12.2'
 gem 'imgkit'
 
 gem 'twitter'
