@@ -66,6 +66,12 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'chartkick'
 gem 'httparty'
 
+# needed for imgkit
+gem 'wkhtmltoimage-binary'
+gem 'imgkit'
+
+gem 'twitter'
+
 # Storage
 # gem "aws-sdk-s3", require: false
 
