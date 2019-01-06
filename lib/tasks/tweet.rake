@@ -12,12 +12,15 @@ namespace :tweet do
       config.access_token_secret = ENV['TWITTER_ACCESS_SECRET']
     end
 
-    # url = "#{ENV.fetch('HOST')}#{root_path}"
-    url = "https://gvt-progress-bot.herokuapp.com"
+    url = "#{ENV.fetch('HOST')}#{root_path}"
+
+    # wkhtmlimage only seems to work with Heroku cedar-14/heroku-16 stack so don't change it
+    # see https://devcenter.heroku.com/articles/stack-packages
+    # the required package is libpng12-0
 
     image_kit = IMGKit.new(url, zoom: 2, width: 2048, height: 1024)
     chart = image_kit.to_file("chart_new.jpg")
 
-    client.update_with_media('Hello World!', chart)
+    client.update_with_media('Hello World! First update:', chart)
   end
 end
