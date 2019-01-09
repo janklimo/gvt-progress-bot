@@ -5,6 +5,8 @@ describe Tweet do
     before do
       @today = create(:entry,
                       gvt_invested: 102_800,
+                      btc_invested: 25.1298,
+                      usd_invested: 420_123,
                       investors_count: 100,
                       trades_count: 4_200,
                       vehicles_count: 333)
@@ -14,7 +16,7 @@ describe Tweet do
 
     it 'includes all necessary info' do
       status = Tweet.status
-      expect(status).to include "💸  102,800 GVT invested\n"
+      expect(status).to include "💸  102,800 GVT / 25.1 BTC / 420,123 USD invested\n"
       expect(status).to include "📈  Up 2.8% since yesterday\n"
       expect(status).to include "👥  100 investors\n"
       expect(status).to include "📗  4,200 trades\n"

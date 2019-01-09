@@ -14,7 +14,9 @@ module Tweet
     change_label = daily_change > 0 ?  "📈  Up" : "📉  Down"
 
     "$GVT stats #{date}:\n\n" \
-      "💸  #{number_with_delimiter(entry.gvt_invested)} GVT invested\n" \
+      "💸  #{number_with_delimiter(entry.gvt_invested)} GVT / " \
+      "#{number_with_precision(entry.btc_invested, precision: 1, delimiter: ',')} BTC / " \
+      "#{number_with_delimiter(entry.usd_invested)} USD invested\n" \
       "#{change_label} #{number_to_percentage(daily_change.abs, precision: 1)} since yesterday\n" \
       "👥  #{number_with_delimiter(entry.investors_count)} investors\n" \
       "📗  #{number_with_delimiter(entry.trades_count)} trades\n" \

@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
+# wkhtmlimage only seems to work with Heroku cedar-14/heroku-16 stack so
+# don't change it - see https://devcenter.heroku.com/articles/stack-packages
+# the required library is libpng12-0
+
 namespace :tweet do
   desc 'Generate and post tweet'
   task post: :environment do
@@ -12,15 +16,18 @@ namespace :tweet do
       config.access_token_secret = ENV['TWITTER_ACCESS_SECRET']
     end
 
-    url = "#{ENV.fetch('HOST')}#{root_path}"
+    gvt_url = "#{ENV.fetch('HOST')}#{charts_gvt_path}"
+    kit = IMGKit.new(gvt_url, zoom: 2, width: 2048, height: 1024)
+    gvt_chart = kit.to_file("chart_gvt.jpg")
 
-    # wkhtmlimage only seems to work with Heroku cedar-14/heroku-16 stack so
-    # don't change it - see https://devcenter.heroku.com/articles/stack-packages
-    # the required library is libpng12-0
+    btc_url = "#{ENV.fetch('HOST')}#{charts_btc_path}"
+    kit = IMGKit.new(btc_url, zoom: 2, width: 2048, height: 1024)
+    btc_chart = kit.to_file("chart_btc.jpg")
 
-    image_kit = IMGKit.new(url, zoom: 2, width: 2048, height: 1024)
-    chart = image_kit.to_file("chart_new.jpg")
+    usd_url = "#{ENV.fetch('HOST')}#{charts_usd_path}"
+    kit = IMGKit.new(usd_url, zoom: 2, width: 2048, height: 1024)
+    usd_chart = kit.to_file("chart_usd.jpg")
 
-    client.update_with_media(Tweet.status, chart)
+    client.update_with_media(Tweet.status, [gvt_chart, btc_chart, usd_chart])
   end
 end

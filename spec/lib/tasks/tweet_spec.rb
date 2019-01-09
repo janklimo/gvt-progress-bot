@@ -14,7 +14,7 @@ describe 'tweet:post' do
 
   it 'posts tweet with media' do
     expect_any_instance_of(Twitter::REST::Client)
-      .to receive(:update_with_media).with(/102,800 GVT invested/, anything)
+      .to receive(:update_with_media).with(/102,800 GVT \//, anything)
     task.invoke
   end
 end
