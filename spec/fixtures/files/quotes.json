@@ -1,71 +1,80 @@
 {
-    "status": {
-        "timestamp": "2019-01-02T13:05:50.520Z",
-        "error_code": 0,
-        "error_message": null,
-        "elapsed": 6,
-        "credit_count": 1
-    },
-    "data": {
-        "BTC": {
-            "id": 1,
-            "name": "Bitcoin",
-            "symbol": "BTC",
-            "slug": "bitcoin",
-            "circulating_supply": 17458600,
-            "total_supply": 17458600,
-            "max_supply": 21000000,
-            "date_added": "2013-04-28T00:00:00.000Z",
-            "num_market_pairs": 6726,
-            "tags": [
-                "mineable"
-            ],
-            "platform": null,
-            "cmc_rank": 1,
-            "last_updated": "2019-01-02T13:04:22.000Z",
-            "quote": {
-                "USD": {
-                    "price": 3855.57239175,
-                    "volume_24h": 4667531090.97147,
-                    "percent_change_1h": 0.182169,
-                    "percent_change_24h": 2.38808,
-                    "percent_change_7d": 1.36347,
-                    "market_cap": 67312896158.60655,
-                    "last_updated": "2019-01-02T13:04:22.000Z"
-                }
-            }
+    "asset_id_base": "GVT",
+    "rates": [
+        {
+            "time": "2019-01-09T05:04:59.0773125Z",
+            "asset_id_quote": "ETH",
+            "rate": 0.026939569465106097097622876
         },
-        "GVT": {
-            "id": 2181,
-            "name": "Genesis Vision",
-            "symbol": "GVT",
-            "slug": "genesis-vision",
-            "circulating_supply": 4426883.31189056,
-            "total_supply": 4436643.92853333,
-            "max_supply": null,
-            "date_added": "2017-11-15T00:00:00.000Z",
-            "num_market_pairs": 12,
-            "tags": [],
-            "platform": {
-                "id": 1027,
-                "name": "Ethereum",
-                "symbol": "ETH",
-                "slug": "ethereum",
-                "token_address": "0x103c3a209da59d3e7c4a89307e66521e081cfdf0"
-            },
-            "cmc_rank": 148,
-            "last_updated": "2019-01-02T13:04:15.000Z",
-            "quote": {
-                "USD": {
-                    "price": 4.30157869335,
-                    "volume_24h": 910575.329497175,
-                    "percent_change_1h": 0.0323358,
-                    "percent_change_24h": 4.53164,
-                    "percent_change_7d": 7.65142,
-                    "market_cap": 19042586.932375114,
-                    "last_updated": "2019-01-02T13:04:15.000Z"
-                }
-            }
+        {
+            "time": "2019-01-09T05:04:59.0773125Z",
+            "asset_id_quote": "BTC",
+            "rate": 0.0010121877519032335424883573
+        },
+        {
+            "time": "2019-01-09T05:04:59.1085493Z",
+            "asset_id_quote": "EUR",
+            "rate": 3.5865115632909087059666838088
+        },
+        {
+            "time": "2019-01-09T05:04:59.1085493Z",
+            "asset_id_quote": "ZAR",
+            "rate": 59.68794054
+        },
+        {
+            "time": "2019-01-09T05:04:59.1085493Z",
+            "asset_id_quote": "USD",
+            "rate": 4.140123361218363022734483492
+        },
+        {
+            "time": "2019-01-09T05:04:59.5460577Z",
+            "asset_id_quote": "CMC",
+            "rate": 1642.1266027953082371427800061
+        },
+        {
+            "time": "2019-01-09T05:04:59.5460577Z",
+            "asset_id_quote": "YST",
+            "rate": 8846191.860786638852099500374
+        },
+        {
+            "time": "2019-01-09T05:04:59.5460577Z",
+            "asset_id_quote": "PINKX",
+            "rate": 745069.48818438304848082859892
+        },
+        {
+            "time": "2019-01-09T05:04:59.5460577Z",
+            "asset_id_quote": "HALF",
+            "rate": 42203149.440569256799636899619
+        },
+        {
+            "time": "2019-01-09T05:04:59.5460577Z",
+            "asset_id_quote": "HEX",
+            "rate": 16175803.509600044284010325365
+        },
+        {
+            "time": "2019-01-09T05:04:59.5460577Z",
+            "asset_id_quote": "DVLP",
+            "rate": 625629.58586299080866944974875
+        },
+        {
+            "time": "2019-01-09T05:04:59.5460577Z",
+            "asset_id_quote": "CJC",
+            "rate": 30099.538456823499028298665922
+        },
+        {
+            "time": "2019-01-09T05:04:59.5460577Z",
+            "asset_id_quote": "VAAC",
+            "rate": 293.22641380278131284649608941
+        },
+        {
+            "time": "2019-01-09T05:04:59.5460577Z",
+            "asset_id_quote": "MSCN",
+            "rate": 6743.1999999999999999999999998
+        },
+        {
+            "time": "2019-01-09T05:04:59.5460577Z",
+            "asset_id_quote": "NAST",
+            "rate": 16476.505760768826685215477676
         }
-    }
+    ]
 }
