@@ -7,19 +7,7 @@
       <h1 class='headline'>GVT Adoption Progress:
         <%= @entry.created_at.strftime(" %b %-d, %Y") %>
       </h1>
-      <h2 class="tagline">
-        Total amount invested
-        <span class="count primary">
-          <%= number_with_delimiter(@entry.gvt_invested) %> GVT
-        </span>
-        <p class="quotes">
-          <%= image_tag 'btc.png', alt: 'btc-logo', class: 'quote-image' %>
-          <%= number_with_precision(@entry.btc_invested, precision: 1, delimiter: ',') %> BTC
-          <span class="separator">|</span>
-          <%= image_tag 'usd.png', alt: 'usd-logo', class: 'quote-image' %>
-          <%= number_with_delimiter(@entry.usd_invested) %> USD
-        </p>
-      </h2>
+      <%= render "tagline_#{base}" %>
     </div>
   </div>
   <script type="text/javascript" charset="utf-8">
@@ -51,7 +39,7 @@
       }) %>
   </div>
   <div class="footer">
-    <span>Total GVT amount invested across all programs and funds.</span>
+    <span>Total amount invested across all programs and funds.</span>
     <span class="credits">
       Charts by
       <span class="primary">@GVTProgressBot</span>

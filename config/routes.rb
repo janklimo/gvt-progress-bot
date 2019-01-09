@@ -3,9 +3,9 @@
 Rails.application.routes.draw do
   devise_for :accounts
 
-  root 'charts#index'
+  root 'charts#gvt'
 
-  get 'charts/btc', to: 'charts#index'
-  get 'charts/gvt', to: 'charts#index'
-  get 'charts/usd', to: 'charts#index'
+  get 'charts/btc', to: 'charts#btc'
+  get 'charts/gvt', to: 'charts#gvt'
+  get 'charts/usd', to: 'charts#usd'
 end
