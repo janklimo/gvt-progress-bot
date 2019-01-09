@@ -4,7 +4,6 @@ namespace :tweet do
   desc 'Generate and post tweet'
   task post: :environment do
     include Rails.application.routes.url_helpers
-    include ActionView::Helpers::NumberHelper
 
     client = Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV['TWITTER_CONSUMER_KEY']
@@ -22,14 +21,6 @@ namespace :tweet do
     image_kit = IMGKit.new(url, zoom: 2, width: 2048, height: 1024)
     chart = image_kit.to_file("chart_new.jpg")
 
-    date = Date.today.strftime("%b %-d, %Y")
-    entry = Entry.order(:created_at).last
-
-    tweet = "$GVT stats #{date}:\n\n" \
-      "💸  #{number_with_delimiter(entry.gvt_invested)} GVT invested\n" \
-      "👥  #{number_with_delimiter(entry.investors_count)} investors\n" \
-      "📗  #{number_with_delimiter(entry.trades_count)} trades\n" \
-      "👨‍💻  #{number_with_delimiter(entry.vehicles_count)} programs and funds"
-    client.update_with_media(tweet, chart)
+    client.update_with_media(Tweet.status, chart)
   end
 end
