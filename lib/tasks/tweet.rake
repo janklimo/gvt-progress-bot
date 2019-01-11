@@ -16,6 +16,16 @@ namespace :tweet do
       config.access_token_secret = ENV['TWITTER_ACCESS_SECRET']
     end
 
+    begin
+      # wake up the dyno
+      res = HTTParty.get(ENV.fetch('HOST'))
+      # wait a bit longer in case of a request timeout
+      sleep 30 if res.code == 500
+    rescue
+      # wait a bit longer in case of an unexpected error
+      sleep 30
+    end
+
     gvt_url = "#{ENV.fetch('HOST')}#{charts_gvt_path}"
     kit = IMGKit.new(gvt_url, zoom: 2, width: 2048, height: 1024)
     gvt_chart = kit.to_file("chart_gvt.jpg")
@@ -28,6 +38,6 @@ namespace :tweet do
     kit = IMGKit.new(usd_url, zoom: 2, width: 2048, height: 1024)
     usd_chart = kit.to_file("chart_usd.jpg")
 
-    client.update_with_media(Tweet.status, [gvt_chart, btc_chart, usd_chart])
+    client.update_with_media(Tweet.status, [usd_chart, btc_chart, gvt_chart])
   end
 end
