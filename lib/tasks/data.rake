@@ -5,7 +5,7 @@ namespace :data do
   task fetch: :environment do
     programs_endpoint = 'https://genesis.vision/api/v1.0/programs'
     funds_endpoint = 'https://genesis.vision/api/v1.0/funds'
-    quotes_endpoint = 'https://rest.coinapi.io/v1/exchangerate/GVT'
+    quotes_endpoint = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=GVT'
 
     gvt_invested = 0
     investors_count = 0
@@ -41,17 +41,23 @@ namespace :data do
 
     # quotes
     res = HTTParty.get(quotes_endpoint, headers: {
-      "X-CoinAPI-Key" => ENV.fetch('COINAPI_KEY')
+      "X-CMC_PRO_API_KEY" => ENV.fetch('CMC_API_KEY')
     })
     data = JSON.parse(res.body)
 
-    btc = data['rates'].find { |r| r['asset_id_quote'] == 'BTC' }.dig('rate')
-    usd = data['rates'].find { |r| r['asset_id_quote'] == 'USD' }.dig('rate')
+    gvt_usd = data.dig('data', 'GVT', 'quote', 'USD', 'price')
+
+    res = HTTParty.get("#{quotes_endpoint}&convert=BTC", headers: {
+      "X-CMC_PRO_API_KEY" => ENV.fetch('CMC_API_KEY')
+    })
+    data = JSON.parse(res.body)
+
+    gvt_btc = data.dig('data', 'GVT', 'quote', 'BTC', 'price')
 
     Entry.create(
       gvt_invested: gvt_invested,
-      btc_invested: gvt_invested * btc,
-      usd_invested: gvt_invested * usd,
+      btc_invested: gvt_invested * gvt_btc,
+      usd_invested: gvt_invested * gvt_usd,
       investors_count: investors_count,
       trades_count: trades_count,
       vehicles_count: vehicles_count,
