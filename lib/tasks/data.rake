@@ -8,7 +8,7 @@ namespace :data do
     quotes_endpoint = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=GVT'
 
     gvt_invested = 0
-    investors_count = 0
+    investments_count = 0
     trades_count = 0
     vehicles_count = 0
 
@@ -20,7 +20,7 @@ namespace :data do
 
     programs.each do |program|
       gvt_invested += program['statistic']['balanceGVT']['amount']
-      investors_count += program['statistic']['investorsCount']
+      investments_count += program['statistic']['investorsCount']
       trades_count += program['statistic']['tradesCount']
     end
 
@@ -34,7 +34,7 @@ namespace :data do
 
     funds.each do |fund|
       gvt_invested += fund['statistic']['balanceGVT']['amount']
-      investors_count += fund['statistic']['investorsCount']
+      investments_count += fund['statistic']['investorsCount']
     end
 
     vehicles_count += data['total']
@@ -58,7 +58,7 @@ namespace :data do
       gvt_invested: gvt_invested,
       btc_invested: gvt_invested * gvt_btc,
       usd_invested: gvt_invested * gvt_usd,
-      investors_count: investors_count,
+      investments_count: investments_count,
       trades_count: trades_count,
       vehicles_count: vehicles_count,
     )

@@ -7,7 +7,7 @@ describe Tweet do
                       gvt_invested: 102_800,
                       btc_invested: 25.1298,
                       usd_invested: 420_123,
-                      investors_count: 100,
+                      investments_count: 100,
                       trades_count: 4_200,
                       vehicles_count: 333)
       # yesterday
@@ -19,7 +19,7 @@ describe Tweet do
       status = Tweet.status
       expect(status).to include "💸  420,123 USD / 25.1 BTC / 102,800 GVT invested\n"
       expect(status).to include "📈  USD 5.0% / BTC 14.2% / GVT 2.8% 24h change\n"
-      expect(status).to include "👥  100 investors\n"
+      expect(status).to include "👥  100 investments\n"
       expect(status).to include "📗  4,200 trades\n"
       expect(status).to include "👨‍💻  333 programs and funds"
     end

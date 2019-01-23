@@ -13,14 +13,14 @@ module Tweet
     #
     # 💸  402,626 USD / 110.6 BTC / 115,036 GVT invested
     # 📈  USD 1.2% / BTC 2.1% / GVT -1.8% 24h change
-    # 👥  2,662 investors
+    # 👥  2,662 investments
     # 📗  60,915 trades
     # 👨‍💻  192 programs and funds
 
     "$GVT stats #{date}:\n\n" \
       "#{aum(entry)}" \
       "#{daily_change(entry)}" \
-      "👥  #{number_with_delimiter(entry.investors_count)} investors\n" \
+      "👥  #{number_with_delimiter(entry.investments_count)} investments\n" \
       "📗  #{number_with_delimiter(entry.trades_count)} trades\n" \
       "👨‍💻  #{number_with_delimiter(entry.vehicles_count)} programs and funds"
   end

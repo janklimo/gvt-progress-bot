@@ -28,7 +28,7 @@ describe 'data:fetch' do
     expect(Entry.last.gvt_invested).to eq 3_624
     expect(Entry.last.btc_invested).to be_within(0.001).of(3.4868)
     expect(Entry.last.usd_invested).to eq 12_857
-    expect(Entry.last.investors_count).to eq 201
+    expect(Entry.last.investments_count).to eq 201
     expect(Entry.last.trades_count).to eq 1_454
     expect(Entry.last.vehicles_count).to eq 164
   end

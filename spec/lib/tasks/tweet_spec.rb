@@ -4,7 +4,7 @@ describe 'tweet:post' do
   include_context 'rake'
 
   before do
-    create(:entry, gvt_invested: 102_800, investors_count: 100,
+    create(:entry, gvt_invested: 102_800, investments_count: 100,
            trades_count: 4_200, vehicles_count: 333)
     create(:entry, gvt_invested: 100_000, created_at: 1.day.ago)
 
