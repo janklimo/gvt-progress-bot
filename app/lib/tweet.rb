@@ -49,4 +49,13 @@ module Tweet
       "BTC #{number_to_percentage(daily_change_btc, precision: 1)} / " \
       "GVT #{number_to_percentage(daily_change_gvt, precision: 1)} 24h change\n"
   end
+
+  def managers
+    # $GVT manager stats Jan 11, 2019:
+    #
+    # 🥇  Bitkolik: $43,219 AUM (crypto)
+    # 🥈  Manager 2: $33,219 AUM (forex)
+    # 🥉  Manager 3: $13,219 AUM (crypto)
+    # 💸  $402,626 total AUM in programs
+  end
 end
