@@ -57,5 +57,23 @@ module Tweet
     # 🥈  Manager 2: $33,219 AUM (forex)
     # 🥉  Manager 3: $13,219 AUM (crypto)
     # 💸  $402,626 total AUM in programs
+
+    date = Date.today.strftime("%b %-d, %Y")
+    entry = Entry.order(:created_at).last
+    programs = entry.programs
+    gvt_usd = entry.gvt_usd
+    total = (programs.sum { |e| e[1].to_f } * gvt_usd)
+
+    "$GVT manager stats #{date}:\n\n" \
+      "🥇  #{manager_line(programs[0], gvt_usd)}\n" \
+      "🥈  #{manager_line(programs[1], gvt_usd)}\n" \
+      "🥉  #{manager_line(programs[2], gvt_usd)}\n" \
+      "💸  #{number_to_currency(total, precision: 0)} total AUM in programs"
+  end
+
+  def manager_line(program, gvt_usd)
+    # program: [title, amount, currency]
+    amount = number_to_currency(program[1].to_f * gvt_usd, precision: 0)
+    "#{program[0]}: #{amount} AUM (#{program[2]})"
   end
 end

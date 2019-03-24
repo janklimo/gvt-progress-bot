@@ -17,23 +17,10 @@ class ChartsController < ApplicationController
   end
 
   def managers
-    @entry = Entry.order(:created_at).last
-    programs_endpoint = 'https://genesis.vision/api/v1.0/programs'
-
-    # programs
-    res = HTTParty.get(programs_endpoint)
-    data = JSON.parse(res.body)
-
-    programs = data['programs']
-
-    entries = programs.map do |program|
-      title = program['title']
-      amount = program['statistic']['balanceGVT']['amount']
-      [title, amount, 'crypto']
-    end
-
-    # sort by amount
-    @chart_data = entries.sort_by { |e| e[1] }.reverse
+    entry = Entry.order(:created_at).last
+    @chart_data = entry.programs
+    # [title, amount, currency]
+    @total = (entry.programs.sum { |e| e[1].to_f } * entry.gvt_usd).to_i
 
     # show top 10
     # -> greater than amount of 11th element

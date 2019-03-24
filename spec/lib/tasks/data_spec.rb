@@ -31,6 +31,7 @@ describe 'data:fetch' do
     expect(Entry.last.investments_count).to eq 201
     expect(Entry.last.trades_count).to eq 1_454
     expect(Entry.last.vehicles_count).to eq 164
+    expect(Entry.last.gvt_usd).to eq 3.54695922756
   end
 end
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_23_044659) do
+ActiveRecord::Schema.define(version: 2019_03_24_145531) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 2019_01_23_044659) do
     t.datetime "updated_at", null: false
     t.integer "usd_invested"
     t.float "btc_invested"
+    t.text "programs", default: [], array: true
+    t.float "gvt_usd"
   end
 
   create_table "users", force: :cascade do |t|

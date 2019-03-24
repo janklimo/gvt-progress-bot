@@ -5,26 +5,11 @@
 # the required library is libpng12-0
 
 namespace :tweet do
+  include Rails.application.routes.url_helpers
+
   desc 'Generate and post tweet'
   task post: :environment do
-    include Rails.application.routes.url_helpers
-
-    client = Twitter::REST::Client.new do |config|
-      config.consumer_key        = ENV['TWITTER_CONSUMER_KEY']
-      config.consumer_secret     = ENV['TWITTER_CONSUMER_SECRET']
-      config.access_token        = ENV['TWITTER_ACCESS_TOKEN']
-      config.access_token_secret = ENV['TWITTER_ACCESS_SECRET']
-    end
-
-    begin
-      # wake up the dyno
-      res = HTTParty.get(ENV.fetch('HOST'))
-      # wait a bit longer in case of a request timeout
-      sleep 30 if res.code == 500
-    rescue
-      # wait a bit longer in case of an unexpected error
-      sleep 30
-    end
+    wake_up
 
     gvt_url = "#{ENV.fetch('HOST')}#{charts_gvt_path}"
     kit = IMGKit.new(gvt_url, zoom: 2, width: 2048, height: 1024)
@@ -39,5 +24,37 @@ namespace :tweet do
     usd_chart = kit.to_file("chart_usd.jpg")
 
     client.update_with_media(Tweet.status, [usd_chart, btc_chart, gvt_chart])
+  end
+
+  desc 'Generate and post a managers tweet'
+  task post_managers: :environment do
+    wake_up
+
+    managers_url = "#{ENV.fetch('HOST')}#{charts_managers_path}"
+    kit = IMGKit.new(managers_url, zoom: 2, width: 2048, height: 1024)
+    managers_chart = kit.to_file("chart_managers.jpg")
+
+    client.update_with_media(Tweet.managers, [managers_chart])
+  end
+
+  def client
+    Twitter::REST::Client.new do |config|
+      config.consumer_key        = ENV['TWITTER_CONSUMER_KEY']
+      config.consumer_secret     = ENV['TWITTER_CONSUMER_SECRET']
+      config.access_token        = ENV['TWITTER_ACCESS_TOKEN']
+      config.access_token_secret = ENV['TWITTER_ACCESS_SECRET']
+    end
+  end
+
+  def wake_up
+    begin
+      # wake up the dyno
+      res = HTTParty.get(ENV.fetch('HOST'))
+      # wait a bit longer in case of a request timeout
+      sleep 30 if res.code == 500
+    rescue
+      # wait a bit longer in case of an unexpected error
+      sleep 30
+    end
   end
 end

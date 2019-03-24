@@ -26,6 +26,15 @@ namespace :data do
 
     vehicles_count += data['total']
 
+    ###### programs by AUM ######
+
+    programs_series = programs.map do |program|
+      title = program['title']
+      currency = program['currency'] == 'USD' ? 'forex' : 'crypto'
+      amount = program['statistic']['balanceGVT']['amount']
+      [title, amount, currency]
+    end.sort_by { |e| e[1] }.reverse
+
     # funds
     res = HTTParty.get(funds_endpoint)
     data = JSON.parse(res.body)
@@ -61,6 +70,8 @@ namespace :data do
       investments_count: investments_count,
       trades_count: trades_count,
       vehicles_count: vehicles_count,
+      programs: programs_series,
+      gvt_usd: gvt_usd,
     )
   end
 end
