@@ -66,6 +66,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'chartkick'
 gem 'httparty'
 
+gem 'discordrb'
+
 # needed for imgkit
 gem 'wkhtmltoimage-binary'
 gem 'imgkit'

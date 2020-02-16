@@ -23,7 +23,9 @@ namespace :tweet do
     kit = IMGKit.new(usd_url, zoom: 2, width: 2048, height: 1024)
     usd_chart = kit.to_file("chart_usd.jpg")
 
-    client.update_with_media(Tweet.status, [usd_chart, btc_chart, gvt_chart])
+    tweet = client.update_with_media(Tweet.status, [usd_chart, btc_chart, gvt_chart])
+
+    post_tweet_to_discord(tweet)
   end
 
   desc 'Generate and post a managers tweet'
@@ -34,7 +36,9 @@ namespace :tweet do
     kit = IMGKit.new(managers_url, zoom: 2, width: 2048, height: 1024)
     managers_chart = kit.to_file("chart_managers.jpg")
 
-    client.update_with_media(Tweet.managers, [managers_chart])
+    tweet = client.update_with_media(Tweet.managers, [managers_chart])
+
+    post_tweet_to_discord(tweet)
   end
 
   def client
@@ -56,5 +60,13 @@ namespace :tweet do
       # wait a bit longer in case of an unexpected error
       sleep 30
     end
+  end
+
+  def post_tweet_to_discord(tweet)
+    # Run Discord bot in background.
+    bot = Discordrb::Bot.new(token: ENV.fetch('DISCORD_TOKEN'))
+    bot.run(true)
+    bot.send_message(ENV.fetch('DISCORD_CHANNEL'), tweet.uri.to_s)
+    bot.stop
   end
 end
