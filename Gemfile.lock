@@ -141,7 +141,7 @@ GEM
     imgkit (1.6.1)
     io-like (0.3.0)
     jaro_winkler (1.5.2)
-    json (2.1.0)
+    json (2.3.1)
     launchy (2.4.3)
       addressable (~> 2.3)
     letter_opener (1.7.0)
