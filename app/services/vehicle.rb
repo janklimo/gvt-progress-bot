@@ -17,10 +17,12 @@ class Vehicle
       amount * quotes['ETH']
     when 'BTC'
       amount * quotes['BTC']
+    when 'GVT'
+      amount * quotes['GVT']
     else
       # USD(T)
       amount
-    end.to_i
+    end
   end
 
   def investors_count

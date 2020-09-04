@@ -4,11 +4,15 @@
     <%= number_with_delimiter(@entry.usd_invested) %> USD
   </span>
   <p class="quotes">
-    <%= image_tag 'gvt.png', alt: 'gvt-logo', class: 'quote-image' %>
-    <%= number_with_delimiter(@entry.gvt_invested) %> GVT
-    <span class="separator">|</span>
     <%= image_tag 'btc.png', alt: 'btc-logo', class: 'quote-image' %>
     <%= number_with_precision(@entry.btc_invested, precision: 1,
                               delimiter: ',') %> BTC
+    <span class="separator">|</span>
+    <%= image_tag 'eth.png', alt: 'eth-logo', class: 'quote-image' %>
+    <%= number_with_precision(@entry.eth_invested, precision: 1,
+                              delimiter: ',') %> ETH
+    <span class="separator">|</span>
+    <%= image_tag 'gvt.png', alt: 'gvt-logo', class: 'quote-image' %>
+    <%= number_with_delimiter(@entry.gvt_invested) %> GVT
   </p>
 </h2>

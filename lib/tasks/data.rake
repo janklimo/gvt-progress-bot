@@ -52,6 +52,9 @@ namespace :data do
 
     Entry.create(
       usd_invested: usd_invested,
+      gvt_invested: usd_invested / quotes['GVT'],
+      btc_invested: usd_invested / quotes['BTC'],
+      eth_invested: usd_invested / quotes['ETH'],
       investments_count: investments_count,
       vehicles_count: vehicles_count,
       programs: programs_series,

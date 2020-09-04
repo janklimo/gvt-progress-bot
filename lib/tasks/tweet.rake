@@ -11,19 +11,11 @@ namespace :tweet do
   task post: :environment do
     wake_up
 
-    gvt_url = "#{ENV.fetch('HOST')}#{charts_gvt_path}"
-    kit = IMGKit.new(gvt_url, zoom: 2, width: 2048, height: 1024)
-    gvt_chart = kit.to_file("chart_gvt.jpg")
-
-    btc_url = "#{ENV.fetch('HOST')}#{charts_btc_path}"
-    kit = IMGKit.new(btc_url, zoom: 2, width: 2048, height: 1024)
-    btc_chart = kit.to_file("chart_btc.jpg")
-
-    usd_url = "#{ENV.fetch('HOST')}#{charts_usd_path}"
+    usd_url = ENV.fetch('HOST')
     kit = IMGKit.new(usd_url, zoom: 2, width: 2048, height: 1024)
     usd_chart = kit.to_file("chart_usd.jpg")
 
-    tweet = client.update_with_media(Tweet.status, [usd_chart, btc_chart, gvt_chart])
+    tweet = client.update_with_media(Tweet.status, [usd_chart])
 
     post_tweet_to_discord(tweet)
   end

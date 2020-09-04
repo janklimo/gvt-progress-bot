@@ -15,8 +15,14 @@ require 'rspec/rails'
 require 'webmock/rspec'
 require 'sidekiq/testing'
 
-# NOTE: System tests break if we don't allow this!
-WebMock.disable_net_connect!(allow_localhost: true)
+WebMock.disable_net_connect!(
+  # NOTE: The webdrivers gem looks for updates to our driver(s) automatically
+  # when we run our specs so we need to allow calls to the driver hosts. For
+  # now we only need the chromedriver:
+  allow: 'chromedriver.storage.googleapis.com',
+  # NOTE: System tests break if we don't allow localhost:
+  allow_localhost: true,
+)
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -31,7 +37,7 @@ WebMock.disable_net_connect!(allow_localhost: true)
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
-Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
+Dir[Rails.root.join('spec/support/**/*.rb')].sort.each { |f| require f }
 
 # Checks for pending migration and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
@@ -41,6 +47,11 @@ RSpec.configure do |config|
   # Allow the use of t() and l() in specs instead of using hard-coded strings
   # or needing the full I18n.t() syntax.
   config.include AbstractController::Translation
+  # Enable use of sanitization such as #strip_tags in order to click/work with
+  # links that contain embedded html (e.g. t('interactions.view_more_html')).
+  config.include ActionView::Helpers::SanitizeHelper
+  config.include Warden::Test::Helpers
+
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   # config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
@@ -79,12 +90,25 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
+  Capybara.default_max_wait_time = 3
+
   # System tests use Rack::Test for non JS test and headless Chrome for JS specs
   config.before(:each, type: :system) do
     driven_by :rack_test
   end
 
+  # Ensure all strings remain consistent between test runs for visual diffing.
+  config.before(:each, :visual_test) do
+    FactoryBot.rewind_sequences
+  end
+
   config.before(:each, type: :system, js: true) do
-    driven_by :selenium_chrome_headless
+    # NOTE: The screen size defaults to 1400x1400
+    driven_by :selenium, using: :headless_chrome
+  end
+
+  # Remove ActiveStorage uploads created during testing
+  config.after do
+    FileUtils.rm_rf(Rails.root.join('tmp/storage'))
   end
 end

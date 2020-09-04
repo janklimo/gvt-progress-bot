@@ -76,6 +76,42 @@
                     "last_updated": "2020-09-03T12:08:26.000Z"
                 }
             }
+        },
+        "GVT": {
+            "id": 2181,
+            "name": "Genesis Vision",
+            "symbol": "GVT",
+            "slug": "genesis-vision",
+            "num_market_pairs": 9,
+            "date_added": "2017-11-15T00:00:00.000Z",
+            "tags": [
+                "asset-management"
+            ],
+            "max_supply": null,
+            "circulating_supply": 4426883.31189056,
+            "total_supply": 4436643.92853333,
+            "platform": {
+                "id": 1027,
+                "name": "Ethereum",
+                "symbol": "ETH",
+                "slug": "ethereum",
+                "token_address": "0x103c3a209da59d3e7c4a89307e66521e081cfdf0"
+            },
+            "is_active": 1,
+            "cmc_rank": 517,
+            "is_fiat": 0,
+            "last_updated": "2020-09-04T14:31:10.000Z",
+            "quote": {
+                "USD": {
+                    "price": 2.04154434651,
+                    "volume_24h": 1003355.83042001,
+                    "percent_change_1h": -5.49305,
+                    "percent_change_24h": -8.99704,
+                    "percent_change_7d": 2.80707,
+                    "market_cap": 9037678.598049637,
+                    "last_updated": "2020-09-04T14:31:10.000Z"
+                }
+            }
         }
     }
 }

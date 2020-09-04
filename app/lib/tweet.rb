@@ -15,6 +15,8 @@ module Tweet
     # 📈  USD 1.2% 24h change
     # 👥  2,662 investments
     # 👨‍💻  192 programs and funds
+    #
+    # 🚀  Invest now: https://genesis.vision/?ref=228295
 
     "$GVT stats #{date}:\n\n" \
       "💸  #{number_with_delimiter(entry.usd_invested)} USD invested\n" \

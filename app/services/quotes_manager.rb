@@ -4,7 +4,7 @@ class QuotesManager
   attr_reader :quotes
 
   ENDPOINT = 'https://pro-api.coinmarketcap.com/v1/' \
-    'cryptocurrency/quotes/latest?symbol=BTC,ETH'
+    'cryptocurrency/quotes/latest?symbol=BTC,ETH,GVT'
 
   def initialize
     response = HTTParty.get(ENDPOINT, headers: {
@@ -15,7 +15,7 @@ class QuotesManager
 
     @quotes = {}
 
-    %w[BTC ETH].each do |coin|
+    %w[BTC ETH GVT].each do |coin|
       @quotes[coin] = data.dig('data', coin, 'quote', 'USD', 'price')
     end
   end

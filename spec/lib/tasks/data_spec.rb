@@ -10,7 +10,7 @@ describe 'data:fetch' do
     stub_request(:get, 'https://genesis.vision/api/v2.0/funds')
       .to_return(status: 200, body: file_fixture('funds.json'))
 
-    stub_request(:get, 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=BTC,ETH')
+    stub_request(:get, 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=BTC,ETH,GVT')
       .with( headers: { 'X-CMC_PRO_API_KEY' => '123' })
       .to_return(status: 200, body: file_fixture('quotes.json'))
 
@@ -23,9 +23,9 @@ describe 'data:fetch' do
     expect(Entry.count).to eq 1
 
     entry = Entry.last
-    expect(entry.usd_invested).to eq 7_419
+    expect(entry.usd_invested).to eq 7_422
     expect(entry.investments_count).to eq 56
     expect(entry.vehicles_count).to eq 280
-    expect(entry.programs.first).to eq ['All Asset Strategy', '3262', 'forex']
+    expect(entry.programs.first).to eq ['All Asset Strategy', '3262.69', 'forex']
   end
 end
