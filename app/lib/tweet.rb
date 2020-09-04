@@ -11,43 +11,27 @@ module Tweet
 
     # $GVT stats Jan 11, 2019:
     #
-    # 💸  402,626 USD / 110.6 BTC / 115,036 GVT invested
-    # 📈  USD 1.2% / BTC 2.1% / GVT -1.8% 24h change
+    # 💸  402,626 USD invested
+    # 📈  USD 1.2% 24h change
     # 👥  2,662 investments
-    # 📗  60,915 trades
     # 👨‍💻  192 programs and funds
 
     "$GVT stats #{date}:\n\n" \
-      "#{aum(entry)}" \
+      "💸  #{number_with_delimiter(entry.usd_invested)} USD invested\n" \
       "#{daily_change(entry)}" \
       "👥  #{number_with_delimiter(entry.investments_count)} investments\n" \
-      "📗  #{number_with_delimiter(entry.trades_count)} trades\n" \
       "👨‍💻  #{number_with_delimiter(entry.vehicles_count)} programs and funds"
-  end
-
-  def aum(entry)
-    "💸  #{number_with_delimiter(entry.usd_invested)} USD / " \
-      "#{number_with_precision(entry.btc_invested, precision: 1, delimiter: ',')} BTC / " \
-      "#{number_with_delimiter(entry.gvt_invested)} GVT invested\n" \
   end
 
   def daily_change(entry)
     yesterday = Entry.order(:created_at).second_to_last
 
-    daily_change_btc =
-      ((entry.btc_invested.to_f / yesterday.btc_invested.to_f) - 1) * 100
-
     daily_change_usd =
       ((entry.usd_invested.to_f / yesterday.usd_invested.to_f) - 1) * 100
 
-    daily_change_gvt =
-      ((entry.gvt_invested.to_f / yesterday.gvt_invested.to_f) - 1) * 100
-
     emoji = daily_change_usd > 0 ?  "📈" : "📉"
 
-    "#{emoji}  USD #{number_to_percentage(daily_change_usd, precision: 1)} / " \
-      "BTC #{number_to_percentage(daily_change_btc, precision: 1)} / " \
-      "GVT #{number_to_percentage(daily_change_gvt, precision: 1)} 24h change\n"
+    "#{emoji}  USD #{number_to_percentage(daily_change_usd, precision: 1)} 24h change\n"
   end
 
   def managers
@@ -61,19 +45,18 @@ module Tweet
     date = Date.today.strftime("%b %-d, %Y")
     entry = Entry.order(:created_at).last
     programs = entry.programs
-    gvt_usd = entry.gvt_usd
-    total = (programs.sum { |e| e[1].to_f } * gvt_usd)
+    total = programs.sum { |e| e[1].to_f }
 
     "$GVT manager stats #{date}:\n\n" \
-      "🥇  #{manager_line(programs[0], gvt_usd)}\n" \
-      "🥈  #{manager_line(programs[1], gvt_usd)}\n" \
-      "🥉  #{manager_line(programs[2], gvt_usd)}\n" \
+      "🥇  #{manager_line(programs[0])}\n" \
+      "🥈  #{manager_line(programs[1])}\n" \
+      "🥉  #{manager_line(programs[2])}\n" \
       "💸  #{number_to_currency(total, precision: 0)} total AUM in programs"
   end
 
-  def manager_line(program, gvt_usd)
-    # program: [title, amount, currency]
-    amount = number_to_currency(program[1].to_f * gvt_usd, precision: 0)
+  def manager_line(program)
+    # program: [title, amount, type]
+    amount = number_to_currency(program[1].to_f, precision: 0)
     "#{program[0]}: #{amount} AUM (#{program[2]})"
   end
 end

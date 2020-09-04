@@ -4,19 +4,15 @@ describe 'data:fetch' do
   include_context 'rake'
 
   before do
-    stub_request(:get, 'https://genesis.vision/api/v1.0/programs')
+    stub_request(:get, 'https://genesis.vision/api/v2.0/programs')
       .to_return(status: 200, body: file_fixture('programs.json'))
 
-    stub_request(:get, 'https://genesis.vision/api/v1.0/funds')
+    stub_request(:get, 'https://genesis.vision/api/v2.0/funds')
       .to_return(status: 200, body: file_fixture('funds.json'))
 
-    stub_request(:get, 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=GVT')
+    stub_request(:get, 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=BTC,ETH')
       .with( headers: { 'X-CMC_PRO_API_KEY' => '123' })
-      .to_return(status: 200, body: file_fixture('gvt_usd_quote.json'))
-
-    stub_request(:get, 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=GVT&convert=BTC')
-      .with( headers: { 'X-CMC_PRO_API_KEY' => '123' })
-      .to_return(status: 200, body: file_fixture('gvt_btc_quote.json'))
+      .to_return(status: 200, body: file_fixture('quotes.json'))
 
     allow(ENV).to receive(:fetch).with('CMC_API_KEY').and_return('123')
   end
@@ -25,13 +21,11 @@ describe 'data:fetch' do
     task.invoke
 
     expect(Entry.count).to eq 1
-    expect(Entry.last.gvt_invested).to eq 3_624
-    expect(Entry.last.btc_invested).to be_within(0.001).of(3.4868)
-    expect(Entry.last.usd_invested).to eq 12_857
-    expect(Entry.last.investments_count).to eq 201
-    expect(Entry.last.trades_count).to eq 1_454
-    expect(Entry.last.vehicles_count).to eq 164
-    expect(Entry.last.gvt_usd).to eq 3.54695922756
+
+    entry = Entry.last
+    expect(entry.usd_invested).to eq 7_419
+    expect(entry.investments_count).to eq 56
+    expect(entry.vehicles_count).to eq 280
+    expect(entry.programs.first).to eq ['All Asset Strategy', '3262', 'forex']
   end
 end
-

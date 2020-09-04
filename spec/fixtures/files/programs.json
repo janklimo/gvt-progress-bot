@@ -1,266 +1,159 @@
 {
-    "programs": [
-        {
-            "currency": "BTC",
-            "level": 3,
-            "periodDuration": 14,
-            "periodStarts": "2018-12-19T21:29:22.8088120+00:00",
-            "periodEnds": "2019-01-02T21:29:22.8088120+00:00",
-            "availableInvestment": 1461.07003906,
-            "statistic": {
-                "balanceBase": {
-                    "amount": 0.97709734,
-                    "currency": "BTC"
-                },
-                "balanceGVT": {
-                    "amount": 896.4184126362,
-                    "currency": "GVT"
-                },
-                "balanceSecondary": {
-                    "amount": 0.97709734,
-                    "currency": "BTC"
-                },
-                "currentValue": 0,
-                "profitPercent": 0,
-                "profitValue": 0,
-                "drawdownPercent": 0,
-                "investorsCount": 54,
-                "tradesCount": 1063
+   "items":[
+      {
+         "id":"8b0c3043-0e12-49f7-a2b7-24c81a17e9ac",
+         "type":"FixedPeriod",
+         "logo":"3e63c1b0-aad1-46ee-9aa0-bd0cdb86f0f5",
+         "logoUrl":"https://storage-s3.genesis.vision/img/opt/c147a43e-53a6-4aa3-bc23-f68ae27d240f.png",
+         "url":"wam-bam-thanks",
+         "description":"Let’s take profits Wam Bam thank you madam/sir",
+         "color":"#936029",
+         "title":"Wam Bam Thanks",
+         "creationDate":"2019-03-07T15:25:42.8182810+00:00",
+         "currency":"ETH",
+         "level":3,
+         "levelProgress":23.80000000,
+         "periodDuration":30,
+         "availableToInvest":34.42862522,
+         "investorsCount":4,
+         "periodStarts":"2020-08-14T05:11:22.9844810+00:00",
+         "periodEnds":"2020-09-13T05:11:22.9844810+00:00",
+         "status":"Active",
+         "entryFeeSelected":5,
+         "entryFeeCurrent":5,
+         "brokerId":"ea03ae46-89eb-481b-a02b-94b9fec548f1",
+         "owner":{
+            "id":"0af24fe5-5a23-431a-8862-d060e15c42bd",
+            "username":"BOSSUCESS",
+            "url":"bossucess",
+            "logoUrl":"https://storage-s3.genesis.vision/img/opt/282fc183-e4de-4516-a43b-304afce6c872.jpeg",
+            "personalDetails":null
+         },
+         "personalDetails":null,
+         "tags":[
+            {
+               "name":"CRYPTO",
+               "color":"#B7C400"
             },
-            "rating": {
-                "rating": 3,
-                "profit": 25.9466,
-                "canLevelUp": false,
-                "topPercent": 15
+            {
+               "name":"SIGNAL",
+               "color":"#0053BA"
             },
-            "personalDetails": null,
-            "tags": [],
-            "id": "03ca6f17-d013-409b-82b6-50cf27ff26ee",
-            "logo": "b5fa6856-03fd-403e-b6e6-43de99f24c17",
-            "url": "14daysswings",
-            "color": "#0D6DA1",
-            "title": "14daysSwings",
-            "description": "Swing Trades using Elliot Wave Theory\nLNola\n",
-            "status": "Active",
-            "manager": {
-                "id": "0cc55431-3928-4005-aece-d540a415c15c",
-                "username": "Trades4Success",
-                "avatar": "8c9b4cea-07a2-4a54-b1bc-bf4fa2bf676d",
-                "registrationDate": "2018-11-02T23:22:56.5999880+00:00",
-                "url": "perovskites"
+            {
+               "name":"HIGH-RISK",
+               "color":"#E84A4A"
+            }
+         ],
+         "statistic":{
+            "chart":[],
+            "profit":0,
+            "drawdown":0
+         },
+         "balance":{
+            "amount":3.29875927,
+            "currency":"ETH"
+         }
+      },
+      {
+         "id":"5e2e9cbd-dfcd-4801-9f5e-a63edae17e71",
+         "type":"FixedPeriod",
+         "logo":"4a96efd6-62a3-468f-9f95-3868a29ab3e9",
+         "logoUrl":"https://storage-s3.genesis.vision/img/opt/2f9b329e-2866-433c-abb8-4fcd80623153.jpg",
+         "url":"april",
+         "description":"This is my account: \nhttps://alpari.com/ru/investor/pamm/424292/ \n\nTrading operations will not be similar, but the trading system will be the same.",
+         "color":"#76D1F6",
+         "title":"April",
+         "creationDate":"2018-11-02T09:50:52.5043880+00:00",
+         "currency":"BTC",
+         "level":3,
+         "levelProgress":1.29000000,
+         "periodDuration":7,
+         "availableToInvest":0.88511940,
+         "investorsCount":2,
+         "periodStarts":"2020-08-28T10:31:07.1399480+00:00",
+         "periodEnds":"2020-09-04T10:31:07.1399480+00:00",
+         "status":"Active",
+         "entryFeeSelected":1,
+         "entryFeeCurrent":1,
+         "brokerId":"ea03ae46-89eb-481b-a02b-94b9fec548f1",
+         "owner":{
+            "id":"7158779d-7d5f-4539-a9c8-f56af527b348",
+            "username":"BUGATTI",
+            "url":"bugatti",
+            "logoUrl":"https://storage-s3.genesis.vision/img/opt/4e812e0e-813f-465b-95f9-1cf2dcd42055.jpg",
+            "personalDetails":null
+         },
+         "personalDetails":null,
+         "tags":[
+            {
+               "name":"CRYPTO",
+               "color":"#B7C400"
             },
-            "chart": [],
-            "dashboardAssetsDetails": null
-        },
-        {
-            "currency": "BTC",
-            "level": 2,
-            "periodDuration": 14,
-            "periodStarts": "2018-12-20T07:28:40.6472840+00:00",
-            "periodEnds": "2019-01-03T07:28:40.6472840+00:00",
-            "availableInvestment": 1,
-            "statistic": {
-                "balanceBase": {
-                    "amount": 0.63168912,
-                    "currency": "BTC"
-                },
-                "balanceGVT": {
-                    "amount": 579.5305493616,
-                    "currency": "GVT"
-                },
-                "balanceSecondary": {
-                    "amount": 0.63168912,
-                    "currency": "BTC"
-                },
-                "currentValue": 0,
-                "profitPercent": 0,
-                "profitValue": 0,
-                "drawdownPercent": 0,
-                "investorsCount": 35,
-                "tradesCount": 71
+            {
+               "name":"HIGH-RISK",
+               "color":"#E84A4A"
+            }
+         ],
+         "statistic":{
+            "chart":[],
+            "profit":0,
+            "drawdown":0
+         },
+         "balance":{
+            "amount":0.09382432,
+            "currency":"BTC"
+         }
+      },
+      {
+         "id":"8f27708a-7da7-43a5-b9f4-1a45512c08b6",
+         "type":"FixedPeriod",
+         "logo":"e8a9d270-be3b-4319-ba6d-a0947ee20fe6",
+         "logoUrl":"https://storage-s3.genesis.vision/img/opt/1c9eb500-c908-4e28-95fb-513edaebc265.jpg",
+         "url":"all-asset-strategy",
+         "description":"Trading all Assets - Be greedy when others are fearful\n\nBanking industry since 1999.\nWorking professionally within the FX- and CFD universe for more than 13 years. \n\nP.S. \n23 Jan 2020\nDAX\nThe correction should start now. Asia already struggeling. \nFeels like a possible correction of 3-5 % ergo. 13.000 should be possible.\n\n31 Jan 2020\nas predicted, the Dax gives up from the top.\nunfortunately I didn't really joined the rally. The strength in the Dow made me hesitate.\n",
+         "color":"#BFBF41",
+         "title":"All Asset Strategy",
+         "creationDate":"2019-07-02T22:10:19.6036190+00:00",
+         "currency":"USD",
+         "level":3,
+         "levelProgress":9.14000000,
+         "periodDuration":30,
+         "availableToInvest":9481.59,
+         "investorsCount":42,
+         "periodStarts":"2020-08-05T06:05:47.6154020+00:00",
+         "periodEnds":"2020-09-04T06:05:47.6154020+00:00",
+         "status":"Active",
+         "entryFeeSelected":0,
+         "entryFeeCurrent":0,
+         "brokerId":"f5b4550d-02f8-4db5-bf70-9e5c269d9ca9",
+         "owner":{
+            "id":"9774f7fb-ca59-4622-a54b-3800cb3d2db5",
+            "username":"AssetManagement-All-JackBlack",
+            "url":"assetmanagement-all-jackblack",
+            "logoUrl":"",
+            "personalDetails":null
+         },
+         "personalDetails":null,
+         "tags":[
+            {
+               "name":"FOREX",
+               "color":"#00991E"
             },
-            "rating": {
-                "rating": 8,
-                "profit": 1.6966,
-                "canLevelUp": true,
-                "topPercent": 10
-            },
-            "personalDetails": null,
-            "tags": [],
-            "id": "ca919dba-84ed-47d2-8f71-818c1a56d83c",
-            "logo": "39a5d06a-4ecf-4e42-a189-284f7786eeb8",
-            "url": "acar-14d",
-            "color": "#37D13A",
-            "title": "Acar 14D",
-            "description": "GVT trading with %50 of the fund and day trading with the rest. Acar Trading\nhttps://t.me/acartrading",
-            "status": "Active",
-            "manager": {
-                "id": "a2b564e6-45d9-43ef-b7c4-a7d4c576ecb1",
-                "username": "Acar Trading",
-                "avatar": null,
-                "registrationDate": "2018-10-30T22:58:37.0126640+00:00",
-                "url": "xendane"
-            },
-            "chart": [],
-            "dashboardAssetsDetails": null
-        },
-        {
-            "currency": "BTC",
-            "level": 3,
-            "periodDuration": 30,
-            "periodStarts": "2018-12-31T19:16:25.2706400+00:00",
-            "periodEnds": "2019-01-30T19:16:25.2706400+00:00",
-            "availableInvestment": 2559.5843,
-            "statistic": {
-                "balanceBase": {
-                    "amount": 0.88150004,
-                    "currency": "BTC"
-                },
-                "balanceGVT": {
-                    "amount": 808.7145816972,
-                    "currency": "GVT"
-                },
-                "balanceSecondary": {
-                    "amount": 0.88150004,
-                    "currency": "BTC"
-                },
-                "currentValue": 0,
-                "profitPercent": 0,
-                "profitValue": 0,
-                "drawdownPercent": 0,
-                "investorsCount": 48,
-                "tradesCount": 118
-            },
-            "rating": {
-                "rating": 2,
-                "profit": 27.4037,
-                "canLevelUp": true,
-                "topPercent": 10
-            },
-            "personalDetails": null,
-            "tags": [],
-            "id": "c5e3a483-91e9-408f-8c77-ac6134d12ea4",
-            "logo": null,
-            "url": "accor-invest",
-            "color": "#35E966",
-            "title": "Accor Invest",
-            "description": "\nOur team analyzes cryptocurrency and Forex markets every day in search of the most promising investments with limited risk.",
-            "status": "Active",
-            "manager": {
-                "id": "9aaf6f7e-8ee5-49f6-a226-91e3fc9d4528",
-                "username": "matadrox",
-                "avatar": null,
-                "registrationDate": "2018-10-30T20:59:11.9237180+00:00",
-                "url": "matadrox"
-            },
-            "chart": [],
-            "dashboardAssetsDetails": null
-        },
-        {
-            "currency": "BTC",
-            "level": 2,
-            "periodDuration": 7,
-            "periodStarts": "2018-12-28T09:57:47.8017530+00:00",
-            "periodEnds": "2019-01-04T09:57:47.8017530+00:00",
-            "availableInvestment": 482.51,
-            "statistic": {
-                "balanceBase": {
-                    "amount": 0.32777436,
-                    "currency": "BTC"
-                },
-                "balanceGVT": {
-                    "amount": 300.7100310948,
-                    "currency": "GVT"
-                },
-                "balanceSecondary": {
-                    "amount": 0.32777436,
-                    "currency": "BTC"
-                },
-                "currentValue": 0,
-                "profitPercent": 0,
-                "profitValue": 0,
-                "drawdownPercent": 0,
-                "investorsCount": 24,
-                "tradesCount": 35
-            },
-            "rating": {
-                "rating": 18,
-                "profit": 0,
-                "canLevelUp": false,
-                "topPercent": 22
-            },
-            "personalDetails": null,
-            "tags": [],
-            "id": "5e2e9cbd-dfcd-4801-9f5e-a63edae17e71",
-            "logo": "4a96efd6-62a3-468f-9f95-3868a29ab3e9",
-            "url": "april",
-            "color": "#76D1F6",
-            "title": "April",
-            "description": "This is my account: \nhttps://alpari.com/ru/investor/pamm/424292/ \n\nTrading operations will not be similar, but the trading system will be the same.",
-            "status": "Active",
-            "manager": {
-                "id": "7158779d-7d5f-4539-a9c8-f56af527b348",
-                "username": "BUGATTI",
-                "avatar": "c7d00020-f13a-4bb1-90be-62fa62475430",
-                "registrationDate": "2018-11-02T08:33:26.7738740+00:00",
-                "url": "bugatti"
-            },
-            "chart": [],
-            "dashboardAssetsDetails": null
-        },
-        {
-            "currency": "BTC",
-            "level": 2,
-            "periodDuration": 30,
-            "periodStarts": "2018-12-03T08:34:29.9266960+00:00",
-            "periodEnds": "2019-01-02T08:34:29.9266960+00:00",
-            "availableInvestment": 0,
-            "statistic": {
-                "balanceBase": {
-                    "amount": 0.98528877,
-                    "currency": "BTC"
-                },
-                "balanceGVT": {
-                    "amount": 903.9334762611,
-                    "currency": "GVT"
-                },
-                "balanceSecondary": {
-                    "amount": 0.98528877,
-                    "currency": "BTC"
-                },
-                "currentValue": 0,
-                "profitPercent": 0,
-                "profitValue": 0,
-                "drawdownPercent": 0,
-                "investorsCount": 39,
-                "tradesCount": 167
-            },
-            "rating": {
-                "rating": 78,
-                "profit": -2.0717,
-                "canLevelUp": false,
-                "topPercent": 95
-            },
-            "personalDetails": null,
-            "tags": [],
-            "id": "95c58b2d-eee0-4e03-8887-b63e2d462ca8",
-            "logo": "8ff45336-82eb-4769-a14f-a9d1573c017f",
-            "url": "heritage-invest",
-            "color": "#D0FD90",
-            "title": "ARK Invest 30D vol 1",
-            "description": "\n\nOur target is to provide our Investors with the greatest  profits with the lowest possible investment risk. Every day, our team analyzes many stock exchanges, forex etc. to search for opportunities for profitable investments",
-            "status": "Active",
-            "manager": {
-                "id": "ed5537e1-e2f8-495f-85e1-307e055b2eaa",
-                "username": "ARKInvest",
-                "avatar": null,
-                "registrationDate": "2018-10-31T16:10:52.9510020+00:00",
-                "url": "arekcwiek"
-            },
-            "chart": [],
-            "dashboardAssetsDetails": null
-        }
-    ],
-    "total": 110
+            {
+               "name":"HIGH-RISK",
+               "color":"#E84A4A"
+            }
+         ],
+         "statistic":{
+            "chart":[],
+            "profit":0,
+            "drawdown":0
+         },
+         "balance":{
+            "amount":3262.69,
+            "currency":"USD"
+         }
+      }
+   ],
+   "total":59
 }
-

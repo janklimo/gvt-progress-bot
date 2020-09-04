@@ -3,75 +3,58 @@
 namespace :data do
   desc 'Fetch data from API'
   task fetch: :environment do
-    programs_endpoint = 'https://genesis.vision/api/v1.0/programs'
-    funds_endpoint = 'https://genesis.vision/api/v1.0/funds'
-    quotes_endpoint = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=GVT'
+    programs_endpoint = 'https://genesis.vision/api/v2.0/programs'
+    funds_endpoint = 'https://genesis.vision/api/v2.0/funds'
 
-    gvt_invested = 0
+    quotes = QuotesManager.new.quotes
+
     investments_count = 0
-    trades_count = 0
     vehicles_count = 0
+    usd_invested = 0
 
     # programs
     res = HTTParty.get(programs_endpoint)
     data = JSON.parse(res.body)
 
-    programs = data['programs']
+    programs = data['items']
 
-    programs.each do |program|
-      gvt_invested += program['statistic']['balanceGVT']['amount']
-      investments_count += program['statistic']['investorsCount']
-      trades_count += program['statistic']['tradesCount']
+    programs.each do |item|
+      program = Vehicle.new(item, quotes)
+      usd_invested += program.usd_invested
+      investments_count += program.investors_count
     end
 
     vehicles_count += data['total']
 
     ###### programs by AUM ######
 
-    programs_series = programs.map do |program|
-      title = program['title']
-      currency = program['currency'] == 'USD' ? 'forex' : 'crypto'
-      amount = program['statistic']['balanceGVT']['amount']
-      [title, amount, currency]
-    end.sort_by { |e| e[1] }.reverse
+    programs_series = programs.map do |item|
+      program = Vehicle.new(item, quotes)
+      title = program.title
+      type = program.type
+      amount = program.usd_invested
+      [title, amount, type]
+    end.sort_by { |e| -e[1] }
 
     # funds
     res = HTTParty.get(funds_endpoint)
     data = JSON.parse(res.body)
 
-    funds = data['funds']
+    funds = data['items']
 
-    funds.each do |fund|
-      gvt_invested += fund['statistic']['balanceGVT']['amount']
-      investments_count += fund['statistic']['investorsCount']
+    funds.each do |item|
+      fund = Vehicle.new(item, quotes)
+      usd_invested += fund.usd_invested
+      investments_count += fund.investors_count
     end
 
     vehicles_count += data['total']
 
-    # quotes
-    res = HTTParty.get(quotes_endpoint, headers: {
-      "X-CMC_PRO_API_KEY" => ENV.fetch('CMC_API_KEY')
-    })
-    data = JSON.parse(res.body)
-
-    gvt_usd = data.dig('data', 'GVT', 'quote', 'USD', 'price')
-
-    res = HTTParty.get("#{quotes_endpoint}&convert=BTC", headers: {
-      "X-CMC_PRO_API_KEY" => ENV.fetch('CMC_API_KEY')
-    })
-    data = JSON.parse(res.body)
-
-    gvt_btc = data.dig('data', 'GVT', 'quote', 'BTC', 'price')
-
     Entry.create(
-      gvt_invested: gvt_invested,
-      btc_invested: gvt_invested * gvt_btc,
-      usd_invested: gvt_invested * gvt_usd,
+      usd_invested: usd_invested,
       investments_count: investments_count,
-      trades_count: trades_count,
       vehicles_count: vehicles_count,
       programs: programs_series,
-      gvt_usd: gvt_usd,
     )
   end
 end

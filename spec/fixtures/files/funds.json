@@ -1,111 +1,173 @@
 {
-    "funds": [
-        {
-            "totalAssetsCount": 15,
-            "topFundAssets": [
-                {
-                    "asset": "BTC",
-                    "name": "Bitcoin",
-                    "percent": 26,
-                    "icon": "be9d1f2a-0cff-4116-8dbf-ebcd687fa822"
-                },
-                {
-                    "asset": "ETH",
-                    "name": "Ethereum",
-                    "percent": 25,
-                    "icon": "dc78d4fb-c7a7-4afa-a613-72e813ba1d73"
-                },
-                {
-                    "asset": "USDT",
-                    "name": "Tether",
-                    "percent": 7,
-                    "icon": "45f061f2-b066-4d47-a40a-fb1320e8dbc5"
-                }
-            ],
-            "statistic": {
-                "balanceGVT": {
-                    "amount": 64.0282642,
-                    "currency": "GVT"
-                },
-                "balanceSecondary": {
-                    "amount": 64.0282642,
-                    "currency": "GVT"
-                },
-                "profitPercent": 0,
-                "drawdownPercent": 0,
-                "investorsCount": 0
+   "items":[
+      {
+         "id":"b0a28ccc-9220-4d84-87cc-cfae3d77d34e",
+         "logo":"424ffdd3-75e6-4fd7-b96e-4c3dafc6a955",
+         "logoUrl":"https://storage-s3.genesis.vision/img/opt/7542b21b-e74e-443a-b51b-aa28d19ac378.png",
+         "url":"2x-pumper",
+         "color":"#89E783",
+         "title":"100x Fund",
+         "description":"Expecting big moves on these coins in the next month to come. \n\n TA based with very strong fundamentals.\n The coins in this index are on a winning trajectory, get in on the action.  \n\nInvest in success.",
+         "creationDate":"2019-04-05T12:47:40.5504120+00:00",
+         "investorsCount":8,
+         "status":"Active",
+         "totalAssetsCount":6,
+         "topFundAssets":[
+            {
+               "asset":"KMD",
+               "name":"Komodo",
+               "percent":38.00000000000000000000,
+               "icon":"7c0c8823-0457-4363-8c89-64bc22447d03",
+               "logoUrl":"https://storage-s3.genesis.vision/img/opt/117eb10f-dbe0-4ce7-81dc-5e67731f67c7.png",
+               "url":"komodo"
             },
-            "personalDetails": null,
-            "id": "cc02448b-e541-45ff-9ac6-77df126b5bd3",
-            "logo": null,
-            "url": "7777777",
-            "color": "#818A9C",
-            "title": "7777777",
-            "description": "The legendary fund of se7ens.",
-            "status": "None",
-            "manager": {
-                "id": "28b03f57-9b56-4713-87f0-a80a7f459dd2",
-                "username": "DYOR",
-                "avatar": null,
-                "registrationDate": "2018-11-05T18:05:09.2088950+00:00",
-                "url": "dyor"
+            {
+               "asset":"TROY",
+               "name":"TROY",
+               "percent":23.00000000000000000000,
+               "icon":"180f3938-4a78-462e-8b41-4ba0f3282f0d",
+               "logoUrl":"https://storage-s3.genesis.vision/img/opt/fd6cf4e7-c9e2-4f90-8602-d32d9e3dff1e.png",
+               "url":"troy"
             },
-            "chart": [],
-            "dashboardAssetsDetails": null
-        },
-        {
-            "totalAssetsCount": 5,
-            "topFundAssets": [
-                {
-                    "asset": "NEO",
-                    "name": "NEO",
-                    "percent": 20,
-                    "icon": "cd0cae83-bc00-4aa6-93d8-bcdb99c1d116"
-                },
-                {
-                    "asset": "LINK",
-                    "name": "Chainlink",
-                    "percent": 20,
-                    "icon": "b2dcb7e5-4119-4098-963d-bd5ff329b536"
-                },
-                {
-                    "asset": "HOT",
-                    "name": "Holo",
-                    "percent": 20,
-                    "icon": "3766012b-0259-4772-b805-7715e272f067"
-                }
-            ],
-            "statistic": {
-                "balanceGVT": {
-                    "amount": 71.47436132,
-                    "currency": "GVT"
-                },
-                "balanceSecondary": {
-                    "amount": 71.47436132,
-                    "currency": "GVT"
-                },
-                "profitPercent": 0,
-                "drawdownPercent": 0,
-                "investorsCount": 1
+            {
+               "asset":"DASH",
+               "name":"Dash",
+               "percent":18.00000000000000000000,
+               "icon":"db307068-b418-4ab9-82bf-c463761d267d",
+               "logoUrl":"https://storage-s3.genesis.vision/img/opt/8762fbd6-5eca-40d2-87e1-d8d088f40921.png",
+               "url":"dash"
+            }
+         ],
+         "owner":{
+            "id":"e63d94eb-b399-4982-8f8b-98ab94dc1de2",
+            "username":"Quantum Capital ",
+            "url":"obsidian",
+            "logoUrl":"https://storage-s3.genesis.vision/img/opt/101e080f-9100-4730-bb9c-f78391657cf3.png",
+            "personalDetails":null
+         },
+         "statistic":{
+            "chart":[],
+            "profit":0,
+            "drawdown":0
+         },
+         "personalDetails":null,
+         "balance":{
+            "amount":0.1241311768930930601559801652,
+            "currency":"BTC"
+         }
+      },
+      {
+         "id":"b23c74c0-a7ab-46de-bcf7-9f175566c6cc",
+         "logo":"e8d9f4da-47da-40c2-9835-effa095746b0",
+         "logoUrl":"https://storage-s3.genesis.vision/img/opt/5aa35d0b-a728-481d-9c8a-53c3496e69ab",
+         "url":"2pos-fund",
+         "color":"#2EDE29",
+         "title":"2POS Fund",
+         "description":"Most perspective proof-of-stake projects.",
+         "creationDate":"2020-02-23T16:11:12.6149660+00:00",
+         "investorsCount":0,
+         "status":"Active",
+         "totalAssetsCount":5,
+         "topFundAssets":[
+            {
+               "asset":"TNB",
+               "name":"Time New Bank",
+               "percent":27.00000000000000000000,
+               "icon":"7f087523-a383-484a-8e36-a3d1fcec36bc",
+               "logoUrl":"https://storage-s3.genesis.vision/img/opt/d488cb11-2f5b-41ff-beb2-af288725d08a.png",
+               "url":"time-new-bank"
             },
-            "personalDetails": null,
-            "id": "44886d7c-f179-47c3-a376-0168ac3f845c",
-            "logo": "caf772c9-2588-4de3-a0dd-197aa6a303eb",
-            "url": "ferrari-fund",
-            "color": "#4A3EF3",
-            "title": "Bizreali Fund ",
-            "description": "The Mother of all funds.",
-            "status": "None",
-            "manager": {
-                "id": "e63d94eb-b399-4982-8f8b-98ab94dc1de2",
-                "username": "Quantum Capital ",
-                "avatar": "e9f95f9e-beb2-47a4-99a3-593b2328a99d",
-                "registrationDate": "2018-11-16T15:30:37.7403930+00:00",
-                "url": "obsidian"
+            {
+               "asset":"PHB",
+               "name":"Red Pulse Phoenix",
+               "percent":21.00000000000000000000,
+               "icon":"509394ea-fdb8-4b20-a964-092510b01860",
+               "logoUrl":"https://storage-s3.genesis.vision/img/opt/59df1350-d65b-490f-80a3-d373d1c909ad.png",
+               "url":"red-pulse-phoenix"
             },
-            "chart": [],
-            "dashboardAssetsDetails": null
-        }
-    ],
-    "total": 54
+            {
+               "asset":"GVT",
+               "name":"Genesis Vision Token",
+               "percent":19.00000000000000000000,
+               "icon":"ecfc81bb-69ce-451a-8f63-0e4267c7d208",
+               "logoUrl":"https://storage-s3.genesis.vision/img/opt/bb21dc56-752a-4354-b6d0-cabd9e4d70f9.png",
+               "url":"genesis-vision-token"
+            }
+         ],
+         "owner":{
+            "id":"1f02a857-7e6a-42db-b7cb-c7369ec1ec33",
+            "username":"CR9 Corp",
+            "url":"cr9-corp_0",
+            "logoUrl":"https://storage-s3.genesis.vision/img/opt/aab02e83-4fdc-4772-b920-9f9dbf4bb1c4.png",
+            "personalDetails":null
+         },
+         "statistic":{
+            "chart":[],
+            "profit":0,
+            "drawdown":0
+         },
+         "personalDetails":null,
+         "balance":{
+            "amount":0.0178969611800000017098857268,
+            "currency":"BTC"
+         }
+      },
+      {
+         "id":"c555ffdd-2b29-436b-9f20-ed4e0131560e",
+         "logo":"b2c6a7ea-cd22-43ad-baca-8d65a3893537",
+         "logoUrl":"https://storage-s3.genesis.vision/img/opt/9c5b2fe4-19c1-4e4b-9981-b7a89c20f782.png",
+         "url":"3month-horizon-10alt",
+         "color":"#3EFFB8",
+         "title":"3Month Horizon 10Alt",
+         "description":"This fund is composed of 10 Altcoins with the high growth potential for the next 3 months.\n\nOnce a month, the fund Asset allocation will be reviewed and adjusted if the market scenario changes.\n\nWeekly report:\n\nhttps://peakd.com/investing/@phgnomo/3month-horizon-10alt-fund-report-2",
+         "creationDate":"2020-07-27T19:52:38.2462610+00:00",
+         "investorsCount":0,
+         "status":"Active",
+         "totalAssetsCount":12,
+         "topFundAssets":[
+            {
+               "asset":"DOT",
+               "name":"Polkadot",
+               "percent":61.00000000000000000000,
+               "icon":"bb3123e1-f8b3-4a8a-8d99-b9a4e1cd206e",
+               "logoUrl":"https://storage-s3.genesis.vision/img/opt/95a3f9dc-19f7-4e22-bda1-c6bedcec73df.png",
+               "url":"polkadot"
+            },
+            {
+               "asset":"KAVA",
+               "name":"Kava",
+               "percent":13.00000000000000000000,
+               "icon":"3cfda31b-4f29-49ff-85df-c6e16a5c712f",
+               "logoUrl":"https://storage-s3.genesis.vision/img/opt/afcd9d37-26a8-4e99-b1a6-829fe382f470.png",
+               "url":"kava"
+            },
+            {
+               "asset":"BTC",
+               "name":"Bitcoin",
+               "percent":7.00000000000000000000,
+               "icon":"be9d1f2a-0cff-4116-8dbf-ebcd687fa822",
+               "logoUrl":"https://storage-s3.genesis.vision/img/opt/bd8d954a-91e6-40e2-94c6-efac449c2893.png",
+               "url":"bitcoin"
+            }
+         ],
+         "owner":{
+            "id":"df0bcf1a-f0d6-42b3-996f-9e30347f729d",
+            "username":"PHBR",
+            "url":"phbr",
+            "logoUrl":"",
+            "personalDetails":null
+         },
+         "statistic":{
+            "chart":[],
+            "profit":0,
+            "drawdown":0
+         },
+         "personalDetails":null,
+         "balance":{
+            "amount":0.0092221354439997844899752762,
+            "currency":"BTC"
+         }
+      }
+   ],
+   "total":221
 }
