@@ -3,6 +3,8 @@
 module Tweet
   extend ActionView::Helpers::NumberHelper
 
+  REFERRAL_LINK = 'https://genesis.vision/?ref=228295'
+
   module_function
 
   def status
@@ -22,7 +24,8 @@ module Tweet
       "💸  #{number_with_delimiter(entry.usd_invested)} USD invested\n" \
       "#{daily_change(entry)}" \
       "👥  #{number_with_delimiter(entry.investments_count)} investments\n" \
-      "👨‍💻  #{number_with_delimiter(entry.vehicles_count)} programs and funds"
+      "👨‍💻  #{number_with_delimiter(entry.vehicles_count)} programs and funds\n\n" \
+      "🚀  Invest now: #{REFERRAL_LINK}"
   end
 
   def daily_change(entry)
@@ -43,6 +46,8 @@ module Tweet
     # 🥈  Manager 2: $33,219 AUM (forex)
     # 🥉  Manager 3: $13,219 AUM (crypto)
     # 💸  $402,626 total AUM in programs
+    #
+    # 🚀  Invest now: https://genesis.vision/?ref=228295
 
     date = Date.today.strftime("%b %-d, %Y")
     entry = Entry.order(:created_at).last
@@ -53,7 +58,8 @@ module Tweet
       "🥇  #{manager_line(programs[0])}\n" \
       "🥈  #{manager_line(programs[1])}\n" \
       "🥉  #{manager_line(programs[2])}\n" \
-      "💸  #{number_to_currency(total, precision: 0)} total AUM in programs"
+      "💸  #{number_to_currency(total, precision: 0)} total AUM in programs\n\n" \
+      "🚀  Invest now: #{REFERRAL_LINK}"
   end
 
   def manager_line(program)

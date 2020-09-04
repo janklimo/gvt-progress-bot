@@ -2,27 +2,25 @@
 
 describe 'tweet:post' do
   include_context 'rake'
-
-  before do
-    create(:entry, usd_invested: 102_800, investments_count: 100, vehicles_count: 333)
-    create(:entry, usd_invested: 100_000, created_at: 1.day.ago)
-
-    allow(IMGKit).to receive(:new).and_return(double(to_file: Tempfile.new))
-    @tweet_url = 'https://twitter.com/janklimo/status/1098890150954754048'
-    allow_any_instance_of(Twitter::REST::Client)
-      .to receive(:update_with_media)
-      .and_return(double(uri: Addressable::URI.parse(@tweet_url)))
-
-    stub_request(:get, ENV.fetch('HOST'))
-      .to_return(status: 200, body: file_fixture('programs.json'))
-
-    allow_any_instance_of(Discordrb::Bot).to receive(:run)
-    allow_any_instance_of(Discordrb::Bot).to receive(:stop)
-  end
+  include_context 'tweet'
 
   it 'posts tweet with media' do
     expect_any_instance_of(Twitter::REST::Client)
       .to receive(:update_with_media).with(/102,800 USD invested/, anything)
+    expect_any_instance_of(Discordrb::Bot)
+      .to receive(:send_message).with(String, @tweet_url)
+    task.invoke
+  end
+end
+
+describe 'tweet:post_managers' do
+  include_context 'rake'
+  include_context 'tweet'
+
+  it 'posts tweet with media' do
+    expect_any_instance_of(Twitter::REST::Client)
+      .to receive(:update_with_media)
+      .with(/\$45,649 total AUM in programs/, anything)
     expect_any_instance_of(Discordrb::Bot)
       .to receive(:send_message).with(String, @tweet_url)
     task.invoke

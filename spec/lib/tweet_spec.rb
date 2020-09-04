@@ -17,6 +17,7 @@ describe Tweet do
       expect(status).to include "📈  USD 5.0% 24h change\n"
       expect(status).to include "👥  100 investments\n"
       expect(status).to include "👨‍💻  333 programs and funds"
+      expect(status).to include Tweet::REFERRAL_LINK
     end
 
     it 'shows daily change correctly when it goes down' do
@@ -43,6 +44,7 @@ describe Tweet do
       expect(status).to include "🥈  Bitkolik: $7,475 AUM (crypto)\n"
       expect(status).to include "🥉  GMTrade II: $5,952 AUM (crypto)\n"
       expect(status).to include "💸  $27,157 total AUM in programs"
+      expect(status).to include Tweet::REFERRAL_LINK
     end
   end
 end
