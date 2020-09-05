@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   root 'charts#usd'
 
   get 'charts/managers', to: 'charts#managers'
+  get 'charts/funds', to: 'charts#funds'
 end

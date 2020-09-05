@@ -12,7 +12,7 @@ namespace :data do
     vehicles_count = 0
     usd_invested = 0
 
-    # programs
+    ###### programs ######
     res = HTTParty.get(programs_endpoint)
     data = JSON.parse(res.body)
 
@@ -36,7 +36,7 @@ namespace :data do
       [title, amount, type]
     end.sort_by { |e| -e[1] }
 
-    # funds
+    ###### funds ######
     res = HTTParty.get(funds_endpoint)
     data = JSON.parse(res.body)
 
@@ -50,6 +50,15 @@ namespace :data do
 
     vehicles_count += data['total']
 
+    ###### funds by AUM ######
+
+    funds_series = funds.map do |item|
+      fund = Vehicle.new(item, quotes)
+      title = fund.title
+      amount = fund.usd_invested
+      [title, amount]
+    end.sort_by { |e| -e[1] }
+
     Entry.create(
       usd_invested: usd_invested,
       gvt_invested: usd_invested / quotes['GVT'],
@@ -58,6 +67,7 @@ namespace :data do
       investments_count: investments_count,
       vehicles_count: vehicles_count,
       programs: programs_series,
+      funds: funds_series,
     )
   end
 end

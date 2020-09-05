@@ -26,6 +26,8 @@ describe 'data:fetch' do
     expect(entry.usd_invested).to eq 7_422
     expect(entry.investments_count).to eq 56
     expect(entry.vehicles_count).to eq 280
-    expect(entry.programs.first).to eq ['All Asset Strategy', '3262.69', 'forex']
+    expect(entry.programs.first)
+      .to eq ['All Asset Strategy', '3262.69', 'forex']
+    expect(entry.funds.first).to eq ['100x Fund', '1397.8881233093812']
   end
 end

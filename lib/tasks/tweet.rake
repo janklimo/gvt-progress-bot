@@ -33,6 +33,19 @@ namespace :tweet do
     post_tweet_to_discord(tweet)
   end
 
+  desc 'Generate and post a funds tweet'
+  task post_funds: :environment do
+    wake_up
+
+    funds_url = "#{ENV.fetch('HOST')}#{charts_funds_path}"
+    kit = IMGKit.new(funds_url, zoom: 2, width: 2048, height: 1024)
+    funds_chart = kit.to_file("chart_funds.jpg")
+
+    tweet = client.update_with_media(Tweet.funds, [funds_chart])
+
+    post_tweet_to_discord(tweet)
+  end
+
   def client
     Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV['TWITTER_CONSUMER_KEY']

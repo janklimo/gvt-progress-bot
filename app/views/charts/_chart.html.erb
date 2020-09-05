@@ -1,0 +1,27 @@
+<div class="chart">
+  <%= pie_chart(data,
+                colors: ['#15bbaf'],
+                height: "335px",
+                library: {
+                  plotOptions: {
+                    series: {
+                      animation: false,
+                    },
+                    pie: {
+                      colors: ['#62e2d9', '#7EE7DF'],
+                      dataLabels: {
+                        enabled: true,
+                        format: '{point.name} ({percentage:.1f}%)',
+                        filter: {
+                          property: 'y',
+                          operator: '>',
+                          value: cutoff
+                        }
+                      }
+                    }
+                  },
+                  chart: {
+                    height: 340
+                  }
+                }) %>
+</div>

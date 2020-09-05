@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_04_143446) do
+ActiveRecord::Schema.define(version: 2020_09_05_054354) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2020_09_04_143446) do
     t.float "btc_invested"
     t.text "programs", default: [], array: true
     t.float "eth_invested"
+    t.text "funds", default: [], array: true
   end
 
   create_table "users", force: :cascade do |t|

@@ -10,15 +10,15 @@ shared_context "tweet" do
              ["ARK Invest - FOREX", "8206.295928", "forex"],
              ["Bitkolik", "7474.9889201856", "crypto"],
              ["GMTrade II", "5952.4386406848", "crypto"],
-             ["Other #4", "5523.1571185472", "crypto"],
-             ["Other #5", "5423.9889201856", "crypto"],
-             ["Other #6", "4952.4386406848", "crypto"],
-             ["Other #7", "3523.1571185472", "crypto"],
-             ["Other #8", "2523.1571185472", "crypto"],
-             ["Other #9", "1523.1571185472", "crypto"],
-             ["Other #10", "523.1571185472", "crypto"],
-             ["Other #11", "23.1571185472", "crypto"],
-           ])
+           ],
+           funds: [
+             ['Lambo Fund', '55034.997720182524'],
+             ['DeFi Basket', '17437.57447819529'],
+             ['BlockTarioGrowth', '15640.085708927814'],
+             ['Oracle Basket', '12750.538709311439'],
+             ['ETH Centric', '6857.524555679148'],
+           ]
+          )
     create(:entry, usd_invested: 100_000, created_at: 1.day.ago)
 
     allow(IMGKit).to receive(:new).and_return(double(to_file: Tempfile.new))

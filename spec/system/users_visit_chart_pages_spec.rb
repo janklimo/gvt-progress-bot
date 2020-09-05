@@ -15,7 +15,21 @@ describe 'Users visit chart pages' do
                       ["Other #9", "1523.1571185472", "crypto"],
                       ["Other #10", "523.1571185472", "crypto"],
                       ["Other #11", "23.1571185472", "crypto"],
-                    ])
+                    ],
+                    funds: [
+                      ['Lambo Fund', '55034.997720182524'],
+                      ['DeFi Basket', '17437.57447819529'],
+                      ['BlockTarioGrowth', '15640.085708927814'],
+                      ['Oracle Basket', '12750.538709311439'],
+                      ['ETH Centric', '6857.524555679148'],
+                      ['Other #6', '5857.524555679148'],
+                      ['Other #7', '4857.524555679148'],
+                      ['Other #8', '3857.524555679148'],
+                      ['Other #9', '2857.524555679148'],
+                      ['Other #10', '1857.524555679148'],
+                      ['Other #11', '657.524555679148'],
+                    ]
+                   )
   end
 
   it 'renders adoption page' do
@@ -26,5 +40,10 @@ describe 'Users visit chart pages' do
   it 'renders managers page' do
     visit charts_managers_path
     expect(page).to have_content 'Top programs by AUM'
+  end
+
+  it 'renders funds page' do
+    visit charts_funds_path
+    expect(page).to have_content 'Top funds by AUM'
   end
 end
