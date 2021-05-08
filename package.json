@@ -30,7 +30,7 @@
     "elliptic": "^6.5.3",
     "jquery": "^3.5.1",
     "jquery-ujs": "^1.2.2",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "minimist": "^1.2.5",
     "popper.js": "^1.12.9",
     "prop-types": "^15.7.2",
